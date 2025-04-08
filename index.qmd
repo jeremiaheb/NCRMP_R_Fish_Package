@@ -1,0 +1,16 @@
+---
+title: "In-Water Survey Metrics Package"
+format: html
+---
+
+Welcome to the **In-Water Survey Metrics** R package documentation site.
+
+This guide will help you:
+- Install the package
+- Understand required data formats
+- Run your first analysis
+- Explore individual functions
+- Export and visualize results
+
+Start with the [Installation](installation.qmd) page.
+

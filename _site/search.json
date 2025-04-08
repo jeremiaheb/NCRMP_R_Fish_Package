@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "installation.html",
+    "href": "installation.html",
+    "title": "Installation",
+    "section": "",
+    "text": "install.packages('devtools')\ndevtools::install_github('jeremiaheb/rvc')"
+  },
+  {
+    "objectID": "installation.html#install-from-github",
+    "href": "installation.html#install-from-github",
+    "title": "Installation",
+    "section": "",
+    "text": "install.packages('devtools')\ndevtools::install_github('jeremiaheb/rvc')"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "In-Water Survey Metrics Package",
+    "section": "",
+    "text": "Welcome to the In-Water Survey Metrics R package documentation site.\nThis guide will help you: - Install the package - Understand required data formats - Run your first analysis - Explore individual functions - Export and visualize results\nStart with the Installation page."
+  },
+  {
+    "objectID": "downloading.html",
+    "href": "downloading.html",
+    "title": "In-Water Survey Metrics R Package",
+    "section": "",
+    "text": "The following code will retrieve NCRMP data for the Florida Keys 2024 survey and save it as ‘FKEYS2024’ object in your R environment\n\nFKEYS2024 &lt;- getRvcData(years = 2024, regions = \"FLA KEYS\")"
+  },
+  {
+    "objectID": "downloading.html#download-data",
+    "href": "downloading.html#download-data",
+    "title": "Downloading the Data",
+    "section": "",
+    "text": "getRvcData(2024, \"FLA KEYS\")"
+  },
+  {
+    "objectID": "downloading.html#downloading-the-data",
+    "href": "downloading.html#downloading-the-data",
+    "title": "In-Water Survey Metrics R Package",
+    "section": "",
+    "text": "The following code will retrieve NCRMP data for the Florida Keys 2024 survey and save it as ‘FKEYS2024’ object in your R environment\n\nFKEYS2024 &lt;- getRvcData(years = 2024, regions = \"FLA KEYS\")"
+  }
+]

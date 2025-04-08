@@ -1,0 +1,13 @@
+---
+title: "Installation"
+format: html
+---
+
+## Install from GitHub
+
+```{r}
+#| echo: true
+#| eval: false
+install.packages('devtools')
+devtools::install_github('jeremiaheb/rvc')
+```

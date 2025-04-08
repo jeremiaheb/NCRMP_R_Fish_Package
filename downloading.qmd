@@ -1,0 +1,14 @@
+---
+title: ""
+format: html
+---
+
+## Downloading the Data
+
+The following code will retrieve NCRMP data for the Florida Keys 2024 survey and save it as a named object in your R environment 
+```{r}
+#| echo: true
+#| eval: false
+FKEYS2024 <- getRvcData(years = 2024, regions = "FLA KEYS")
+```
+
