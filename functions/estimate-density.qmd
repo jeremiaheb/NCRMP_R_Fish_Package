@@ -7,7 +7,7 @@ format: html
 
 ### Purpose
 
-Calculates mean density ind/cylinder.
+Calculates mean density ind/cylinder (or $ind/177m^2$) at the domain level.
 
 ### Usage
 
@@ -15,6 +15,38 @@ Calculates mean density ind/cylinder.
 #| echo: true
 #| eval: false
 getDomainDensity()
+```
+
+### Output
+
+## Function: `getStratumDensity()`
+
+### Purpose
+
+Calculates mean density ind/cylinder (or $ind/177m^2$) at the stratum level.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getStratumDensity()
+```
+
+### Output
+
+## Function: `getPSUDensity()`
+
+### Purpose
+
+Calculates mean density ind/cylinder (or $ind/177m^2$) at the Primary Sample Unit (PSU) level.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getPSUDensity()
 ```
 
 ### Output

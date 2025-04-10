@@ -7,7 +7,7 @@ format: html
 
 ### Purpose
 
-Calculates mean length.
+Calculates mean length (cm) at the domain level.
 
 ### Usage
 

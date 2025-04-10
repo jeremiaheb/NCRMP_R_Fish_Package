@@ -1,16 +1,15 @@
 ---
-title: "In-Water Survey Metrics Package"
+title: "NCRMP Fish Survey Metrics Package"
 format: html
 ---
 
-Welcome to the **In-Water Survey Metrics** R package documentation site.
+Welcome to the **NCRMP Fish Survey Metrics** R package documentation site.
 
-This guide will help you:
-- Install the package
-- Understand required data formats
-- Run your first analysis
-- Explore individual functions
-- Export and visualize results
+This guide will help you with:
 
-Start with the [Installation](installation.qmd) page.
-
+-   [Installation](installation.qmd) of the package
+-   [Downloading](downloading.qmd) the data
+-   Run your first analysis with [Quick Start](quick-start.qmd)
+-   Explore individual functions using the Function Reference tab
+-   [Visualization](visualization.qmd) of results
+-   [Troubleshooting](troubleshooting.qmd) common issues

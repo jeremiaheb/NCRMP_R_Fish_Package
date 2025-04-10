@@ -200,9 +200,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#downloading-the-data" id="toc-downloading-the-data" class="nav-link active" data-scroll-target="#downloading-the-data">Downloading the Data</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data">Structure of the data</a></li>
-  <li><a href="#sec-AvaliableData" id="toc-sec-AvaliableData" class="nav-link" data-scroll-target="#sec-AvaliableData">Available Data</a></li>
+  <li><a href="#downloading-the-data" id="toc-downloading-the-data" class="nav-link active" data-scroll-target="#downloading-the-data"><span class="header-section-number">1</span> Downloading the Data</a></li>
+  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="header-section-number">2</span> Structure of the data</a></li>
+  <li><a href="#sec-AvaliableData" id="toc-sec-AvaliableData" class="nav-link" data-scroll-target="#sec-AvaliableData"><span class="header-section-number">3</span> Available Data</a></li>
   </ul>
 </nav>
     </div>
@@ -212,8 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="downloading-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-the-data">Downloading the Data</h2>
+<section id="downloading-the-data" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="downloading-the-data"><span class="header-section-number">1</span> Downloading the Data</h2>
 <p>The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>FKEYS2024 <span class="ot">&lt;-</span> <span class="fu">getRvcData</span>(<span class="at">years =</span> <span class="dv">2024</span>, <span class="at">regions =</span> <span class="st">"FLA KEYS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -236,8 +236,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>USVI <span class="ot">&lt;-</span> <span class="fu">getRvcData</span>(<span class="at">years =</span> <span class="fu">c</span>(<span class="dv">2017</span>, <span class="dv">2023</span>), <span class="at">regions =</span> <span class="fu">c</span>(<span class="st">"STTSTJ"</span>, <span class="st">"STX"</span>)) <span class="co">#Only 2017 and 2023 in U.S. Virgin Islands</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="structure-of-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="structure-of-the-data">Structure of the data</h2>
+<section id="structure-of-the-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">2</span> Structure of the data</h2>
 <p>When using the <strong>getRVCData()</strong> function, the following structure is returned and all other functions in the R-package expect this structure. The object returned is a list of 3 dataframes</p>
 <ol type="1">
 <li>sample_data: numbers at length for each species (with some additional meta data)</li>
@@ -293,8 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="sec-AvaliableData" class="level2">
-<h2 class="anchored" data-anchor-id="sec-AvaliableData">Available Data</h2>
+<section id="sec-AvaliableData" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sec-AvaliableData"><span class="header-section-number">3</span> Available Data</h2>
 <p><strong>As of Spring 2025</strong></p>
 <table class="caption-top table">
 <colgroup>

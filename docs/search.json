@@ -1,52 +1,80 @@
 [
   {
+    "objectID": "quick-start.html#example-workflow",
+    "href": "quick-start.html#example-workflow",
+    "title": "Quick-start",
+    "section": "Example Workflow",
+    "text": "Example Workflow\n\n“What is the mean density of Red Hind (Epinephelus guttatus) over time in St. Thomas U.S. Virgin Islands”\n\n\nload the package library\n\n\nlibrary(rvc)\nlibrary(kableExtra)# Display a pretty table\nlibrary(ggplot2)\n\n\ndownload region and years of interest\n\n\nSTTSTJ &lt;- getRvcData(years = 2017:2023, regions = \"STTSTJ\")\n\n\nestimate density using the data object downloading from step 2\n\n\nRH_density &lt;- getDomainDensity(STTSTJ, \"EPI GUTT\")\n\nhead(RH_density) %&gt;% kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\ndensity\nvar\nn\nnm\nN\nNM\nSTAGE_LEVEL\n\n\n\n\n2017\nSTTSTJ\nEPI GUTT\n0.4459786\n0.0038043\n236\nNA\n50644\n716466.0\n1\n\n\n2019\nSTTSTJ\nEPI GUTT\n0.5158166\n0.0030699\n322\nNA\n50644\n716466.0\n1\n\n\n2021\nSTTSTJ\nEPI GUTT\n0.4815063\n0.0028042\n165\nNA\n50644\n716466.0\n1\n\n\n2023\nSTTSTJ\nEPI GUTT\n0.4351223\n0.0020429\n287\nNA\n50567\n715376.7\n1\n\n\n\n\n\n\ncreate additional column and plot via ggplot2\n\n\nRH_density %&gt;% \n  mutate(SE = sqrt(var)) %&gt;% \n  ggplot(aes(x = YEAR, y = density)) +\n    geom_line() +\n    geom_point(size = 2) +\n    geom_errorbar(aes(ymin = density - SE, ymax = density + SE),                  \n                  width = 0.25,\n                  size = 0.5) +\n  theme_classic()+\n  ylab(expression(paste(\"Density (ind/\", m^2 ,\")\"))) +\n  xlab(\"Year\") +\n  ggtitle(\"St. Thomas & St. John Red Hind Density\") +\n  theme(plot.title = element_text(hjust = 0.5))"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "In-Water Survey Metrics Package",
+    "title": "NCRMP Fish Survey Metrics Package",
     "section": "",
-    "text": "Welcome to the In-Water Survey Metrics R package documentation site.\nThis guide will help you: - Install the package - Understand required data formats - Run your first analysis - Explore individual functions - Export and visualize results\nStart with the Installation page."
+    "text": "Welcome to the NCRMP Fish Survey Metrics R package documentation site.\nThis guide will help you with:\n\nInstallation of the package\nDownloading the data\nRun your first analysis with Quick Start\nExplore individual functions using the Function Reference tab\nVisualization of results\nTroubleshooting common issues"
   },
   {
     "objectID": "functions/estimate-occurrence.html",
     "href": "functions/estimate-occurrence.html",
     "title": "Occurrence",
     "section": "",
-    "text": "Calculates mean occurrence.\n\n\n\n\ngetDomainOccurrence()"
+    "text": "Calculates mean occurrence at the domain level.\n\n\n\n\ngetDomainOccurrence()"
   },
   {
     "objectID": "functions/estimate-occurrence.html#function-getdomainoccurrence",
     "href": "functions/estimate-occurrence.html#function-getdomainoccurrence",
     "title": "Occurrence",
     "section": "",
-    "text": "Calculates mean occurrence.\n\n\n\n\ngetDomainOccurrence()"
+    "text": "Calculates mean occurrence at the domain level.\n\n\n\n\ngetDomainOccurrence()"
+  },
+  {
+    "objectID": "functions/estimate-occurrence.html#function-getstratumoccurrence",
+    "href": "functions/estimate-occurrence.html#function-getstratumoccurrence",
+    "title": "Occurrence",
+    "section": "Function: getStratumOccurrence()",
+    "text": "Function: getStratumOccurrence()\n\nPurpose\nCalculates mean occurrence at the stratum level.\n\n\nUsage\n\ngetStratumOccurrence()\n\n\n\nOutput"
   },
   {
     "objectID": "functions/estimate-lbar.html",
     "href": "functions/estimate-lbar.html",
     "title": "Mean Length",
     "section": "",
-    "text": "Calculates mean length.\n\n\n\n\ngetDomainLbar()"
+    "text": "Calculates mean length (cm) at the domain level.\n\n\n\n\ngetDomainLbar()"
   },
   {
     "objectID": "functions/estimate-lbar.html#function-getdomainlbar",
     "href": "functions/estimate-lbar.html#function-getdomainlbar",
     "title": "Mean Length",
     "section": "",
-    "text": "Calculates mean length.\n\n\n\n\ngetDomainLbar()"
+    "text": "Calculates mean length (cm) at the domain level.\n\n\n\n\ngetDomainLbar()"
   },
   {
     "objectID": "functions/estimate-biomass.html",
     "href": "functions/estimate-biomass.html",
     "title": "Biomass",
     "section": "",
-    "text": "Calculates mean biomass kg/cylinder.\n\n\n\n\ngetDomainBiomass()"
+    "text": "Calculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainBiomass()"
   },
   {
     "objectID": "functions/estimate-biomass.html#function-getdomainbiomass",
     "href": "functions/estimate-biomass.html#function-getdomainbiomass",
     "title": "Biomass",
     "section": "",
-    "text": "Calculates mean biomass kg/cylinder.\n\n\n\n\ngetDomainBiomass()"
+    "text": "Calculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainBiomass()"
+  },
+  {
+    "objectID": "functions/estimate-biomass.html#function-getstratumbiomass",
+    "href": "functions/estimate-biomass.html#function-getstratumbiomass",
+    "title": "Biomass",
+    "section": "Function: getStratumBiomass()",
+    "text": "Function: getStratumBiomass()\n\nPurpose\nCalculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the stratum level.\n\n\nUsage\n\ngetStratumBiomass()\n\n\n\nOutput"
+  },
+  {
+    "objectID": "functions/estimate-biomass.html#function-getpsubiomass",
+    "href": "functions/estimate-biomass.html#function-getpsubiomass",
+    "title": "Biomass",
+    "section": "Function: getPSUBiomass()",
+    "text": "Function: getPSUBiomass()\n\nPurpose\nCalculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the Primary Sample Unit (PSU) level.\n\n\nUsage\n\ngetPSUBiomass()\n\n\n\nOutput"
   },
   {
     "objectID": "downloading.html",
@@ -66,8 +94,15 @@
     "objectID": "downloading.html#structure-of-the-data",
     "href": "downloading.html#structure-of-the-data",
     "title": "NCRMP Fish R Package",
-    "section": "Structure of the data",
-    "text": "Structure of the data\nWhen using the getRVCData() function, the following structure is returned and all other functions in the R-package expect this structure. The object returned is a list of 3 dataframes\n\nsample_data: numbers at length for each species (with some additional meta data)\nstratum_data: number of grid cells for each strata (this provided weighting factors)\ntaxonomic_data: additional species information\n\n\nglimpse(FKEYS2024)\n\nList of 3\n $ sample_data   :'data.frame': 356254 obs. of  24 variables:\n  ..$ PRIMARY_SAMPLE_UNIT  : int [1:356254] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...\n  ..$ YEAR                 : int [1:356254] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...\n  ..$ MONTH                : int [1:356254] 6 6 6 6 6 6 6 6 6 6 ...\n  ..$ DAY                  : int [1:356254] 27 27 27 27 27 27 27 27 27 27 ...\n  ..$ STATION_NR           : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ LAT_DEGREES          : num [1:356254] 24.5 24.5 24.5 24.5 24.5 ...\n  ..$ LON_DEGREES          : num [1:356254] -81.9 -81.9 -81.9 -81.9 -81.9 ...\n  ..$ DEPTH                : num [1:356254] 3.51 3.51 3.51 3.51 3.51 ...\n  ..$ UNDERWATER_VISIBILITY: num [1:356254] 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 ...\n  ..$ MAPGRID_NR           : int [1:356254] 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 ...\n  ..$ HABITAT_CD           : chr [1:356254] \"ISOL_LR\" \"ISOL_LR\" \"ISOL_LR\" \"ISOL_LR\" ...\n  ..$ ZONE_NR              : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ SUBREGION_NR         : int [1:356254] 8 8 8 8 8 8 8 8 8 8 ...\n  ..$ MPA_NR               : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ SPECIES_NR           : int [1:356254] 1 2 3 4 5 6 7 7 7 8 ...\n  ..$ SPECIES_CD           : chr [1:356254] \"ANT OCEL\" \"APO BINO\" \"MAL GILL\" \"MAL VERS\" ...\n  ..$ LEN                  : num [1:356254] 0 0 0 0 0 0 0 5 6 0 ...\n  ..$ NUM                  : num [1:356254] 0 0 0 0 0 0 0 0.5 0.5 0 ...\n  ..$ TIME_SEEN            : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ PROT                 : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ DEPTH_CLASS          : chr [1:356254] \"D1\" \"D1\" \"D1\" \"D1\" ...\n  ..$ RUGOSITY_CLASS       : chr [1:356254] \"R1\" \"R1\" \"R1\" \"R1\" ...\n  ..$ STRAT                : chr [1:356254] \"FK01\" \"FK01\" \"FK01\" \"FK01\" ...\n  ..$ REGION               : chr [1:356254] \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" ...\n $ stratum_data  :'data.frame': 15 obs. of  7 variables:\n  ..$ REGION     : chr [1:15] \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" ...\n  ..$ YEAR       : int [1:15] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...\n  ..$ PROT       : int [1:15] 0 0 0 0 0 0 0 0 1 1 ...\n  ..$ STRAT      : chr [1:15] \"FK01\" \"FK02\" \"FK03\" \"FK04\" ...\n  ..$ NTOT       : int [1:15] 4372 29583 15126 43717 16855 23296 20275 23328 447 766 ...\n  ..$ GRID_SIZE  : int [1:15] 50 50 50 50 50 50 50 50 50 50 ...\n  ..$ STAGE_LEVEL: int [1:15] 1 1 1 1 1 1 1 1 1 1 ...\n $ taxonomic_data:'data.frame': 487 obs. of  8 variables:\n  ..$ SPECIES_CD: chr [1:487] \"ABL HIAN\" \"ABU SAXA\" \"ABU TAUR\" \"ACA ASPE\" ...\n  ..$ FAMILY    : chr [1:487] \"Belonidae\" \"Pomacentridae\" \"Pomacentridae\" \"Chaenopsidae\" ...\n  ..$ SCINAME   : chr [1:487] \"Ablennes hians\" \"Abudefduf saxatilis\" \"Abudefduf taurus\" \"Acanthemblemaria aspera\" ...\n  ..$ COMNAME   : chr [1:487] \"flat needlefish\" \"sergeant major\" \"night sergeant\" \"roughhead blenny\" ...\n  ..$ LC        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...\n  ..$ LM        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...\n  ..$ WLEN_A    : num [1:487] NA 1.64e-05 NA 8.40e-06 8.40e-06 8.40e-06 NA 8.40e-06 NA 1.79e-05 ...\n  ..$ WLEN_B    : num [1:487] NA 3.14 NA 2.96 2.96 ..."
+    "section": "2 Structure of the data",
+    "text": "2 Structure of the data\nWhen using the getRVCData() function, the following structure is returned and all other functions in the R-package expect this structure. The object returned is a list of 3 dataframes\n\nsample_data: numbers at length for each species (with some additional meta data)\nstratum_data: number of grid cells for each strata (this provided weighting factors)\ntaxonomic_data: additional species information\n\n\nglimpse(FKEYS2024)\n\nList of 3\n $ sample_data   :'data.frame': 356254 obs. of  24 variables:\n  ..$ PRIMARY_SAMPLE_UNIT  : int [1:356254] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...\n  ..$ YEAR                 : int [1:356254] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...\n  ..$ MONTH                : int [1:356254] 6 6 6 6 6 6 6 6 6 6 ...\n  ..$ DAY                  : int [1:356254] 27 27 27 27 27 27 27 27 27 27 ...\n  ..$ STATION_NR           : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ LAT_DEGREES          : num [1:356254] 24.5 24.5 24.5 24.5 24.5 ...\n  ..$ LON_DEGREES          : num [1:356254] -81.9 -81.9 -81.9 -81.9 -81.9 ...\n  ..$ DEPTH                : num [1:356254] 3.51 3.51 3.51 3.51 3.51 ...\n  ..$ UNDERWATER_VISIBILITY: num [1:356254] 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 ...\n  ..$ MAPGRID_NR           : int [1:356254] 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 ...\n  ..$ HABITAT_CD           : chr [1:356254] \"ISOL_LR\" \"ISOL_LR\" \"ISOL_LR\" \"ISOL_LR\" ...\n  ..$ ZONE_NR              : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ SUBREGION_NR         : int [1:356254] 8 8 8 8 8 8 8 8 8 8 ...\n  ..$ MPA_NR               : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ SPECIES_NR           : int [1:356254] 1 2 3 4 5 6 7 7 7 8 ...\n  ..$ SPECIES_CD           : chr [1:356254] \"ANT OCEL\" \"APO BINO\" \"MAL GILL\" \"MAL VERS\" ...\n  ..$ LEN                  : num [1:356254] 0 0 0 0 0 0 0 5 6 0 ...\n  ..$ NUM                  : num [1:356254] 0 0 0 0 0 0 0 0.5 0.5 0 ...\n  ..$ TIME_SEEN            : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ PROT                 : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ DEPTH_CLASS          : chr [1:356254] \"D1\" \"D1\" \"D1\" \"D1\" ...\n  ..$ RUGOSITY_CLASS       : chr [1:356254] \"R1\" \"R1\" \"R1\" \"R1\" ...\n  ..$ STRAT                : chr [1:356254] \"FK01\" \"FK01\" \"FK01\" \"FK01\" ...\n  ..$ REGION               : chr [1:356254] \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" ...\n $ stratum_data  :'data.frame': 15 obs. of  7 variables:\n  ..$ REGION     : chr [1:15] \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" ...\n  ..$ YEAR       : int [1:15] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...\n  ..$ PROT       : int [1:15] 0 0 0 0 0 0 0 0 1 1 ...\n  ..$ STRAT      : chr [1:15] \"FK01\" \"FK02\" \"FK03\" \"FK04\" ...\n  ..$ NTOT       : int [1:15] 4372 29583 15126 43717 16855 23296 20275 23328 447 766 ...\n  ..$ GRID_SIZE  : int [1:15] 50 50 50 50 50 50 50 50 50 50 ...\n  ..$ STAGE_LEVEL: int [1:15] 1 1 1 1 1 1 1 1 1 1 ...\n $ taxonomic_data:'data.frame': 487 obs. of  8 variables:\n  ..$ SPECIES_CD: chr [1:487] \"ABL HIAN\" \"ABU SAXA\" \"ABU TAUR\" \"ACA ASPE\" ...\n  ..$ FAMILY    : chr [1:487] \"Belonidae\" \"Pomacentridae\" \"Pomacentridae\" \"Chaenopsidae\" ...\n  ..$ SCINAME   : chr [1:487] \"Ablennes hians\" \"Abudefduf saxatilis\" \"Abudefduf taurus\" \"Acanthemblemaria aspera\" ...\n  ..$ COMNAME   : chr [1:487] \"flat needlefish\" \"sergeant major\" \"night sergeant\" \"roughhead blenny\" ...\n  ..$ LC        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...\n  ..$ LM        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...\n  ..$ WLEN_A    : num [1:487] NA 1.64e-05 NA 8.40e-06 8.40e-06 8.40e-06 NA 8.40e-06 NA 1.79e-05 ...\n  ..$ WLEN_B    : num [1:487] NA 3.14 NA 2.96 2.96 ..."
+  },
+  {
+    "objectID": "downloading.html#sec-AvaliableData",
+    "href": "downloading.html#sec-AvaliableData",
+    "title": "NCRMP Fish R Package",
+    "section": "3 Available Data",
+    "text": "3 Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
   },
   {
     "objectID": "about.html",
@@ -81,56 +116,98 @@
     "href": "functions/estimate-abundance.html",
     "title": "Abundance",
     "section": "",
-    "text": "Calculates total species abundance.\n\n\n\n\ngetDomainAbundance()"
+    "text": "Calculates total species abundance at the domain level.\n\n\n\n\ngetDomainAbundance()"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getdomainabundance",
     "href": "functions/estimate-abundance.html#function-getdomainabundance",
     "title": "Abundance",
     "section": "",
-    "text": "Calculates total species abundance.\n\n\n\n\ngetDomainAbundance()"
+    "text": "Calculates total species abundance at the domain level.\n\n\n\n\ngetDomainAbundance()"
+  },
+  {
+    "objectID": "functions/estimate-abundance.html#function-getstratumabundance",
+    "href": "functions/estimate-abundance.html#function-getstratumabundance",
+    "title": "Abundance",
+    "section": "Function: getStratumAbundance()",
+    "text": "Function: getStratumAbundance()\n\nPurpose\nCalculates total species abundance at the stratum level.\n\n\nUsage\n\ngetStratumAbundance()\n\n\n\nOutput"
+  },
+  {
+    "objectID": "functions/estimate-abundance.html#function-getpsuabundance",
+    "href": "functions/estimate-abundance.html#function-getpsuabundance",
+    "title": "Abundance",
+    "section": "Function: getPSUAbundance()",
+    "text": "Function: getPSUAbundance()\n\nPurpose\nCalculates total species abundance at the Primary Sample Unit (PSU) level.\n\n\nUsage\n\ngetPSUAbundance()\n\n\n\nOutput"
   },
   {
     "objectID": "functions/estimate-density.html",
     "href": "functions/estimate-density.html",
     "title": "Density",
     "section": "",
-    "text": "Calculates mean density ind/cylinder.\n\n\n\n\ngetDomainDensity()"
+    "text": "Calculates mean density ind/cylinder (or \\(ind/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainDensity()"
   },
   {
     "objectID": "functions/estimate-density.html#function-getdomaindensity",
     "href": "functions/estimate-density.html#function-getdomaindensity",
     "title": "Density",
     "section": "",
-    "text": "Calculates mean density ind/cylinder.\n\n\n\n\ngetDomainDensity()"
+    "text": "Calculates mean density ind/cylinder (or \\(ind/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainDensity()"
+  },
+  {
+    "objectID": "functions/estimate-density.html#function-getstratumdensity",
+    "href": "functions/estimate-density.html#function-getstratumdensity",
+    "title": "Density",
+    "section": "Function: getStratumDensity()",
+    "text": "Function: getStratumDensity()\n\nPurpose\nCalculates mean density ind/cylinder (or \\(ind/177m^2\\)) at the stratum level.\n\n\nUsage\n\ngetStratumDensity()\n\n\n\nOutput"
+  },
+  {
+    "objectID": "functions/estimate-density.html#function-getpsudensity",
+    "href": "functions/estimate-density.html#function-getpsudensity",
+    "title": "Density",
+    "section": "Function: getPSUDensity()",
+    "text": "Function: getPSUDensity()\n\nPurpose\nCalculates mean density ind/cylinder (or \\(ind/177m^2\\)) at the Primary Sample Unit (PSU) level.\n\n\nUsage\n\ngetPSUDensity()\n\n\n\nOutput"
   },
   {
     "objectID": "functions/estimate-lf.html",
     "href": "functions/estimate-lf.html",
     "title": "Length Frequency",
     "section": "",
-    "text": "Calculates length frequency.\n\n\n\n\ngetDomainLengthFrequency()"
+    "text": "Calculates relative length frequency at the domain level.\n\n\n\n\ngetDomainLengthFrequency()"
   },
   {
     "objectID": "functions/estimate-lf.html#function-getdomainlengthfrequency",
     "href": "functions/estimate-lf.html#function-getdomainlengthfrequency",
     "title": "Length Frequency",
     "section": "",
-    "text": "Calculates length frequency.\n\n\n\n\ngetDomainLengthFrequency()"
+    "text": "Calculates relative length frequency at the domain level.\n\n\n\n\ngetDomainLengthFrequency()"
+  },
+  {
+    "objectID": "functions/estimate-lf.html#function-getstratumlengthfrequency",
+    "href": "functions/estimate-lf.html#function-getstratumlengthfrequency",
+    "title": "Length Frequency",
+    "section": "Function: getStratumLengthFrequency()",
+    "text": "Function: getStratumLengthFrequency()\n\nPurpose\nCalculates relative length frequency at the stratum level.\n\n\nUsage\n\ngetStratumLengthFrequency()\n\n\n\nOutput"
   },
   {
     "objectID": "functions/estimate-totalbiomass.html",
     "href": "functions/estimate-totalbiomass.html",
     "title": "Total Biomass",
     "section": "",
-    "text": "Calculates total biomass kg.\n\n\n\n\ngetDomainTotalBiomass()"
+    "text": "Calculates total biomass (kg) scaled up to domain level.\n\n\n\n\ngetDomainTotalBiomass()"
   },
   {
     "objectID": "functions/estimate-totalbiomass.html#function-getdomaintotalbiomass",
     "href": "functions/estimate-totalbiomass.html#function-getdomaintotalbiomass",
     "title": "Total Biomass",
     "section": "",
-    "text": "Calculates total biomass kg.\n\n\n\n\ngetDomainTotalBiomass()"
+    "text": "Calculates total biomass (kg) scaled up to domain level.\n\n\n\n\ngetDomainTotalBiomass()"
+  },
+  {
+    "objectID": "functions/estimate-totalbiomass.html#function-getstratumtotalbiomass",
+    "href": "functions/estimate-totalbiomass.html#function-getstratumtotalbiomass",
+    "title": "Total Biomass",
+    "section": "Function: getStratumTotalBiomass()",
+    "text": "Function: getStratumTotalBiomass()\n\nPurpose\nCalculates total biomass (kg) scaled up to stratum level.\n\n\nUsage\n\ngetStratumTotalBiomass()\n\n\n\nOutput"
   },
   {
     "objectID": "installation.html",
@@ -151,27 +228,6 @@
     "href": "installation.html#load-library",
     "title": "Installation",
     "section": "Load library",
-    "text": "Load library\nload the package\n\nlibrary(rvc)"
-  },
-  {
-    "objectID": "downloading.html#available-data",
-    "href": "downloading.html#available-data",
-    "title": "NCRMP Fish R Package",
-    "section": "Available Data",
-    "text": "Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
-  },
-  {
-    "objectID": "downloading.html#Avaliable-Data",
-    "href": "downloading.html#Avaliable-Data",
-    "title": "NCRMP Fish R Package",
-    "section": "Available Data",
-    "text": "Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
-  },
-  {
-    "objectID": "downloading.html#sec-AvaliableData",
-    "href": "downloading.html#sec-AvaliableData",
-    "title": "NCRMP Fish R Package",
-    "section": "Available Data",
-    "text": "Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
+    "text": "Load library\n\nlibrary(rvc)"
   }
 ]

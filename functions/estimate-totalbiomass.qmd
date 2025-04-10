@@ -7,7 +7,7 @@ format: html
 
 ### Purpose
 
-Calculates total biomass kg.
+Calculates total biomass (kg) scaled up to domain level.
 
 ### Usage
 
@@ -15,6 +15,22 @@ Calculates total biomass kg.
 #| echo: true
 #| eval: false
 getDomainTotalBiomass()
+```
+
+### Output
+
+## Function: `getStratumTotalBiomass()`
+
+### Purpose
+
+Calculates total biomass (kg) scaled up to stratum level.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getStratumTotalBiomass()
 ```
 
 ### Output

@@ -1,6 +1,60 @@
 ---
 title: "Quick-start"
 format: html
+lightbox: true
 ---
 
+```{r}
+#| echo: false
+#| warning: false
+STTSTJ <- readRDS("data/STTSTJ.rds")
+```
+
 ![](images/Function%20Diagram.jpg){.lightbox fig-align="center"}
+
+## Example Workflow
+
+> "What is the mean density of Red Hind (*Epinephelus guttatus*) over time in St. Thomas U.S. Virgin Islands"
+
+1)  load necessary libraries
+
+```{r}
+library(rvc)
+library(kableExtra)# Display a pretty table
+library(ggplot2)
+```
+
+2)  download region and years of interest
+
+```{r}
+#| echo: true
+#| eval: false
+STTSTJ <- getRvcData(years = 2017:2023, regions = "STTSTJ")
+```
+
+3) estimate density using the data object downloading from step 2
+
+```{r}
+#| warning: false
+RH_density <- getDomainDensity(STTSTJ, "EPI GUTT")
+
+head(RH_density) %>% kable()
+```
+
+4) create additional column and plot via ggplot2
+```{r}
+#| warning: false
+RH_density %>% 
+  mutate(SE = sqrt(var)) %>% 
+  ggplot(aes(x = YEAR, y = density)) +
+    geom_line() +
+    geom_point(size = 2) +
+    geom_errorbar(aes(ymin = density - SE, ymax = density + SE),                  
+                  width = 0.25,
+                  size = 0.5) +
+  theme_classic()+
+  ylab(expression(paste("Density (ind/", m^2 ,")"))) +
+  xlab("Year") +
+  ggtitle("St. Thomas & St. John Red Hind Density") +
+  theme(plot.title = element_text(hjust = 0.5))
+```

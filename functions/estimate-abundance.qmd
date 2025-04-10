@@ -7,7 +7,7 @@ format: html
 
 ### Purpose
 
-Calculates total species abundance.
+Calculates total species abundance at the domain level.
 
 ### Usage
 
@@ -15,6 +15,38 @@ Calculates total species abundance.
 #| echo: true
 #| eval: false
 getDomainAbundance()
+```
+
+### Output
+
+## Function: `getStratumAbundance()`
+
+### Purpose
+
+Calculates total species abundance at the stratum level.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getStratumAbundance()
+```
+
+### Output
+
+## Function: `getPSUAbundance()`
+
+### Purpose
+
+Calculates total species abundance at the Primary Sample Unit (PSU) level.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getPSUAbundance()
 ```
 
 ### Output

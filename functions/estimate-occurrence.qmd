@@ -7,7 +7,7 @@ format: html
 
 ### Purpose
 
-Calculates mean occurrence.
+Calculates mean occurrence at the domain level.
 
 ### Usage
 
@@ -15,6 +15,22 @@ Calculates mean occurrence.
 #| echo: true
 #| eval: false
 getDomainOccurrence()
+```
+
+### Output
+
+## Function: `getStratumOccurrence()`
+
+### Purpose
+
+Calculates mean occurrence at the stratum level.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getStratumOccurrence()
 ```
 
 ### Output
