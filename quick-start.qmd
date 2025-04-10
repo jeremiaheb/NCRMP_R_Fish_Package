@@ -1,0 +1,6 @@
+---
+title: "Quick-start"
+format: html
+---
+
+![](images/Function%20Diagram.jpg){.lightbox fig-align="center"}

@@ -11,3 +11,13 @@ format: html
 install.packages('devtools')
 devtools::install_github('jeremiaheb/rvc')
 ```
+
+You will not need to run the above code again after the initial download and install.
+
+## Load library 
+
+```{r}
+#| echo: true
+#| eval: false
+library(rvc)
+```

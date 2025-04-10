@@ -1,14 +1,73 @@
 ---
 title: ""
 format: html
+number-sections: true
 ---
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+FKEYS2024 <- readRDS("data/FKEYS2024.rds")
+```
 
 ## Downloading the Data
 
-The following code will retrieve NCRMP data for the Florida Keys 2024 survey and save it as a named object in your R environment 
+The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment
+
 ```{r}
 #| echo: true
 #| eval: false
 FKEYS2024 <- getRvcData(years = 2024, regions = "FLA KEYS")
 ```
 
+the 'regions' parameter takes a specific formatted argument
+
+| **"FLA KEYS"** : Florida Keys (Miami/Dade south to Key West)
+| **"DRY TORT"** : Dry Tortugas
+| **"SEFCRI"** : Southeast Florida (Miami/Dade north to Martin County)
+| **"FGBNMS"** : Flower Garden Banks National Marine Sanctuary
+| **"PRICO"** : Puerto Rico
+| **"STTSTJ"** : St. Thomas and St. John
+| **"STX"** : St. Croix
+
+------------------------------------------------------------------------
+
+You can also download multiple years and/or regions into one object (see @sec-AvaliableData)
+
+```{r}
+#| echo: true
+#| eval: false
+
+# and range of years 1999:2024
+All_Keys <- getRvcData(years = 1999:2024, regions = "FLA KEYS") #All years in the Keys
+
+# or 2 specifc years in 2 specific regions
+USVI <- getRvcData(years = c(2017, 2023), regions = c("STTSTJ", "STX")) #Only 2017 and 2023 in U.S. Virgin Islands
+```
+
+## Structure of the data
+
+When using the **getRVCData()** function, the following structure is returned and all other functions in the R-package expect this structure. The object returned is a list of 3 dataframes
+
+1)  sample_data: numbers at length for each species (with some additional meta data)
+2)  stratum_data: number of grid cells for each strata (this provided weighting factors)
+3)  taxonomic_data: additional species information
+
+```{r}
+glimpse(FKEYS2024)
+```
+
+## Available Data {#sec-AvaliableData}
+
+**As of Spring 2025**
+
+|   | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| **Dry Tortugas** | **X** | **X** |  |  |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  |  | **X** |  | **X** | **X** |
+| **Florida Keys** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |  | **X** |  | **X** |  | **X** |  |  |  | **X** |  | **X** |
+| **S.E. Florida** |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** | **X** | **X** | **X** |  | **X** |  |  | **X** | **X** |  | **X** |
+| **Flower Gardens** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  |  |  | **X** | **X** | **X** |
+| **Puerto Rico** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  |  | **X** |  | **X** |  | **X** |  |
+| **St. Thomas/John** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  | **X** |  | **X** |  | **X** |  |
+| **St. Croix** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  | **X** |  | **X** |  | **X** |  |

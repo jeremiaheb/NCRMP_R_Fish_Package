@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "In-Water Survey Metrics Package",
+    "section": "",
+    "text": "Welcome to the In-Water Survey Metrics R package documentation site.\nThis guide will help you: - Install the package - Understand required data formats - Run your first analysis - Explore individual functions - Export and visualize results\nStart with the Installation page."
+  },
+  {
+    "objectID": "functions/estimate-occurrence.html",
+    "href": "functions/estimate-occurrence.html",
+    "title": "Occurrence",
+    "section": "",
+    "text": "Calculates mean occurrence.\n\n\n\n\ngetDomainOccurrence()"
+  },
+  {
+    "objectID": "functions/estimate-occurrence.html#function-getdomainoccurrence",
+    "href": "functions/estimate-occurrence.html#function-getdomainoccurrence",
+    "title": "Occurrence",
+    "section": "",
+    "text": "Calculates mean occurrence.\n\n\n\n\ngetDomainOccurrence()"
+  },
+  {
+    "objectID": "functions/estimate-lbar.html",
+    "href": "functions/estimate-lbar.html",
+    "title": "Mean Length",
+    "section": "",
+    "text": "Calculates mean length.\n\n\n\n\ngetDomainLbar()"
+  },
+  {
+    "objectID": "functions/estimate-lbar.html#function-getdomainlbar",
+    "href": "functions/estimate-lbar.html#function-getdomainlbar",
+    "title": "Mean Length",
+    "section": "",
+    "text": "Calculates mean length.\n\n\n\n\ngetDomainLbar()"
+  },
+  {
+    "objectID": "functions/estimate-biomass.html",
+    "href": "functions/estimate-biomass.html",
+    "title": "Biomass",
+    "section": "",
+    "text": "Calculates mean biomass kg/cylinder.\n\n\n\n\ngetDomainBiomass()"
+  },
+  {
+    "objectID": "functions/estimate-biomass.html#function-getdomainbiomass",
+    "href": "functions/estimate-biomass.html#function-getdomainbiomass",
+    "title": "Biomass",
+    "section": "",
+    "text": "Calculates mean biomass kg/cylinder.\n\n\n\n\ngetDomainBiomass()"
+  },
+  {
+    "objectID": "downloading.html",
+    "href": "downloading.html",
+    "title": "NCRMP Fish R Package",
+    "section": "",
+    "text": "The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment\n\nFKEYS2024 &lt;- getRvcData(years = 2024, regions = \"FLA KEYS\")\n\nthe ‘regions’ parameter takes a specific formatted argument\n“FLA KEYS” : Florida Keys (Miami/Dade south to Key West)\n“DRY TORT” : Dry Tortugas\n“SEFCRI” : Southeast Florida (Miami/Dade north to Martin County)\n“FGBNMS” : Flower Garden Banks National Marine Sanctuary\n“PRICO” : Puerto Rico\n“STTSTJ” : St. Thomas and St. John\n“STX” : St. Croix\n\nYou can also download multiple years and/or regions into one object (see Section 3)\n\n# and range of years 1999:2024\nAll_Keys &lt;- getRvcData(years = 1999:2024, regions = \"FLA KEYS\") #All years in the Keys\n\n# or 2 specifc years in 2 specific regions\nUSVI &lt;- getRvcData(years = c(2017, 2023), regions = c(\"STTSTJ\", \"STX\")) #Only 2017 and 2023 in U.S. Virgin Islands"
+  },
+  {
+    "objectID": "downloading.html#downloading-the-data",
+    "href": "downloading.html#downloading-the-data",
+    "title": "NCRMP Fish R Package",
+    "section": "",
+    "text": "The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment\n\nFKEYS2024 &lt;- getRvcData(years = 2024, regions = \"FLA KEYS\")\n\nthe ‘regions’ parameter takes a specific formatted argument\n“FLA KEYS” : Florida Keys (Miami/Dade south to Key West)\n“DRY TORT” : Dry Tortugas\n“SEFCRI” : Southeast Florida (Miami/Dade north to Martin County)\n“FGBNMS” : Flower Garden Banks National Marine Sanctuary\n“PRICO” : Puerto Rico\n“STTSTJ” : St. Thomas and St. John\n“STX” : St. Croix\n\nYou can also download multiple years and/or regions into one object (see Section 3)\n\n# and range of years 1999:2024\nAll_Keys &lt;- getRvcData(years = 1999:2024, regions = \"FLA KEYS\") #All years in the Keys\n\n# or 2 specifc years in 2 specific regions\nUSVI &lt;- getRvcData(years = c(2017, 2023), regions = c(\"STTSTJ\", \"STX\")) #Only 2017 and 2023 in U.S. Virgin Islands"
+  },
+  {
+    "objectID": "downloading.html#structure-of-the-data",
+    "href": "downloading.html#structure-of-the-data",
+    "title": "NCRMP Fish R Package",
+    "section": "Structure of the data",
+    "text": "Structure of the data\nWhen using the getRVCData() function, the following structure is returned and all other functions in the R-package expect this structure. The object returned is a list of 3 dataframes\n\nsample_data: numbers at length for each species (with some additional meta data)\nstratum_data: number of grid cells for each strata (this provided weighting factors)\ntaxonomic_data: additional species information\n\n\nglimpse(FKEYS2024)\n\nList of 3\n $ sample_data   :'data.frame': 356254 obs. of  24 variables:\n  ..$ PRIMARY_SAMPLE_UNIT  : int [1:356254] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...\n  ..$ YEAR                 : int [1:356254] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...\n  ..$ MONTH                : int [1:356254] 6 6 6 6 6 6 6 6 6 6 ...\n  ..$ DAY                  : int [1:356254] 27 27 27 27 27 27 27 27 27 27 ...\n  ..$ STATION_NR           : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ LAT_DEGREES          : num [1:356254] 24.5 24.5 24.5 24.5 24.5 ...\n  ..$ LON_DEGREES          : num [1:356254] -81.9 -81.9 -81.9 -81.9 -81.9 ...\n  ..$ DEPTH                : num [1:356254] 3.51 3.51 3.51 3.51 3.51 ...\n  ..$ UNDERWATER_VISIBILITY: num [1:356254] 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 ...\n  ..$ MAPGRID_NR           : int [1:356254] 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 ...\n  ..$ HABITAT_CD           : chr [1:356254] \"ISOL_LR\" \"ISOL_LR\" \"ISOL_LR\" \"ISOL_LR\" ...\n  ..$ ZONE_NR              : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ SUBREGION_NR         : int [1:356254] 8 8 8 8 8 8 8 8 8 8 ...\n  ..$ MPA_NR               : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ SPECIES_NR           : int [1:356254] 1 2 3 4 5 6 7 7 7 8 ...\n  ..$ SPECIES_CD           : chr [1:356254] \"ANT OCEL\" \"APO BINO\" \"MAL GILL\" \"MAL VERS\" ...\n  ..$ LEN                  : num [1:356254] 0 0 0 0 0 0 0 5 6 0 ...\n  ..$ NUM                  : num [1:356254] 0 0 0 0 0 0 0 0.5 0.5 0 ...\n  ..$ TIME_SEEN            : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...\n  ..$ PROT                 : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...\n  ..$ DEPTH_CLASS          : chr [1:356254] \"D1\" \"D1\" \"D1\" \"D1\" ...\n  ..$ RUGOSITY_CLASS       : chr [1:356254] \"R1\" \"R1\" \"R1\" \"R1\" ...\n  ..$ STRAT                : chr [1:356254] \"FK01\" \"FK01\" \"FK01\" \"FK01\" ...\n  ..$ REGION               : chr [1:356254] \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" ...\n $ stratum_data  :'data.frame': 15 obs. of  7 variables:\n  ..$ REGION     : chr [1:15] \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" \"FLA KEYS\" ...\n  ..$ YEAR       : int [1:15] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...\n  ..$ PROT       : int [1:15] 0 0 0 0 0 0 0 0 1 1 ...\n  ..$ STRAT      : chr [1:15] \"FK01\" \"FK02\" \"FK03\" \"FK04\" ...\n  ..$ NTOT       : int [1:15] 4372 29583 15126 43717 16855 23296 20275 23328 447 766 ...\n  ..$ GRID_SIZE  : int [1:15] 50 50 50 50 50 50 50 50 50 50 ...\n  ..$ STAGE_LEVEL: int [1:15] 1 1 1 1 1 1 1 1 1 1 ...\n $ taxonomic_data:'data.frame': 487 obs. of  8 variables:\n  ..$ SPECIES_CD: chr [1:487] \"ABL HIAN\" \"ABU SAXA\" \"ABU TAUR\" \"ACA ASPE\" ...\n  ..$ FAMILY    : chr [1:487] \"Belonidae\" \"Pomacentridae\" \"Pomacentridae\" \"Chaenopsidae\" ...\n  ..$ SCINAME   : chr [1:487] \"Ablennes hians\" \"Abudefduf saxatilis\" \"Abudefduf taurus\" \"Acanthemblemaria aspera\" ...\n  ..$ COMNAME   : chr [1:487] \"flat needlefish\" \"sergeant major\" \"night sergeant\" \"roughhead blenny\" ...\n  ..$ LC        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...\n  ..$ LM        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...\n  ..$ WLEN_A    : num [1:487] NA 1.64e-05 NA 8.40e-06 8.40e-06 8.40e-06 NA 8.40e-06 NA 1.79e-05 ...\n  ..$ WLEN_B    : num [1:487] NA 3.14 NA 2.96 2.96 ..."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "functions/estimate-abundance.html",
+    "href": "functions/estimate-abundance.html",
+    "title": "Abundance",
+    "section": "",
+    "text": "Calculates total species abundance.\n\n\n\n\ngetDomainAbundance()"
+  },
+  {
+    "objectID": "functions/estimate-abundance.html#function-getdomainabundance",
+    "href": "functions/estimate-abundance.html#function-getdomainabundance",
+    "title": "Abundance",
+    "section": "",
+    "text": "Calculates total species abundance.\n\n\n\n\ngetDomainAbundance()"
+  },
+  {
+    "objectID": "functions/estimate-density.html",
+    "href": "functions/estimate-density.html",
+    "title": "Density",
+    "section": "",
+    "text": "Calculates mean density ind/cylinder.\n\n\n\n\ngetDomainDensity()"
+  },
+  {
+    "objectID": "functions/estimate-density.html#function-getdomaindensity",
+    "href": "functions/estimate-density.html#function-getdomaindensity",
+    "title": "Density",
+    "section": "",
+    "text": "Calculates mean density ind/cylinder.\n\n\n\n\ngetDomainDensity()"
+  },
+  {
+    "objectID": "functions/estimate-lf.html",
+    "href": "functions/estimate-lf.html",
+    "title": "Length Frequency",
+    "section": "",
+    "text": "Calculates length frequency.\n\n\n\n\ngetDomainLengthFrequency()"
+  },
+  {
+    "objectID": "functions/estimate-lf.html#function-getdomainlengthfrequency",
+    "href": "functions/estimate-lf.html#function-getdomainlengthfrequency",
+    "title": "Length Frequency",
+    "section": "",
+    "text": "Calculates length frequency.\n\n\n\n\ngetDomainLengthFrequency()"
+  },
+  {
+    "objectID": "functions/estimate-totalbiomass.html",
+    "href": "functions/estimate-totalbiomass.html",
+    "title": "Total Biomass",
+    "section": "",
+    "text": "Calculates total biomass kg.\n\n\n\n\ngetDomainTotalBiomass()"
+  },
+  {
+    "objectID": "functions/estimate-totalbiomass.html#function-getdomaintotalbiomass",
+    "href": "functions/estimate-totalbiomass.html#function-getdomaintotalbiomass",
+    "title": "Total Biomass",
+    "section": "",
+    "text": "Calculates total biomass kg.\n\n\n\n\ngetDomainTotalBiomass()"
+  },
+  {
+    "objectID": "installation.html",
+    "href": "installation.html",
+    "title": "Installation",
+    "section": "",
+    "text": "install.packages('devtools')\ndevtools::install_github('jeremiaheb/rvc')\n\nYou will not need to run the above code again after the initial download and install."
+  },
+  {
+    "objectID": "installation.html#install-from-github",
+    "href": "installation.html#install-from-github",
+    "title": "Installation",
+    "section": "",
+    "text": "install.packages('devtools')\ndevtools::install_github('jeremiaheb/rvc')\n\nYou will not need to run the above code again after the initial download and install."
+  },
+  {
+    "objectID": "installation.html#load-library",
+    "href": "installation.html#load-library",
+    "title": "Installation",
+    "section": "Load library",
+    "text": "Load library\nload the package\n\nlibrary(rvc)"
+  },
+  {
+    "objectID": "downloading.html#available-data",
+    "href": "downloading.html#available-data",
+    "title": "NCRMP Fish R Package",
+    "section": "Available Data",
+    "text": "Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
+  },
+  {
+    "objectID": "downloading.html#Avaliable-Data",
+    "href": "downloading.html#Avaliable-Data",
+    "title": "NCRMP Fish R Package",
+    "section": "Available Data",
+    "text": "Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
+  },
+  {
+    "objectID": "downloading.html#sec-AvaliableData",
+    "href": "downloading.html#sec-AvaliableData",
+    "title": "NCRMP Fish R Package",
+    "section": "Available Data",
+    "text": "Available Data\nAs of Spring 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1999\n2000\n2001\n2002\n2003\n2004\n2005\n2006\n2007\n2008\n2009\n2010\n2011\n2012\n2013\n2014\n2015\n2016\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n\n\n\n\nDry Tortugas\nX\nX\n\n\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\nX\n\n\nX\n\nX\nX\n\n\nFlorida Keys\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\nX\n\nX\n\nX\n\nX\n\n\n\nX\n\nX\n\n\nS.E. Florida\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\nX\nX\nX\n\nX\n\n\nX\nX\n\nX\n\n\nFlower Gardens\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\n\nX\nX\nX\n\n\nPuerto Rico\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\n\nX\n\nX\n\nX\n\n\n\nSt. Thomas/John\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX\n\n\n\nSt. Croix\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nX\n\nX\n\nX\n\nX"
+  }
+]

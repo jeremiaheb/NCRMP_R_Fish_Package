@@ -1,0 +1,20 @@
+---
+title: "Biomass"
+format: html
+---
+
+## Function: `getDomainBiomass()`
+
+### Purpose
+
+Calculates mean biomass kg/cylinder.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainBiomass()
+```
+
+### Output

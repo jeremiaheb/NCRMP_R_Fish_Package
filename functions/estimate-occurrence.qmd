@@ -1,0 +1,20 @@
+---
+title: "Occurrence"
+format: html
+---
+
+## Function: `getDomainOccurrence()`
+
+### Purpose
+
+Calculates mean occurrence.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainOccurrence()
+```
+
+### Output

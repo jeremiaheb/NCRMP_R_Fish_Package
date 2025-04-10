@@ -1,0 +1,20 @@
+---
+title: "Mean Length"
+format: html
+---
+
+## Function: `getDomainLbar()`
+
+### Purpose
+
+Calculates mean length.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainLbar()
+```
+
+### Output

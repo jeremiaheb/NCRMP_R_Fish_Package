@@ -1,0 +1,20 @@
+---
+title: "Density"
+format: html
+---
+
+## Function: `getDomainDensity()`
+
+### Purpose
+
+Calculates mean density ind/cylinder.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainDensity()
+```
+
+### Output

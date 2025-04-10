@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "In-Water Survey Metrics R Package"
+  title: "NCRMP Fish R Package"
   navbar:
     left:
       - text: "Home"
@@ -17,25 +18,29 @@ website:
         menu:
           - text: "Estimate Abundance"
             href: functions/estimate-abundance.qmd
-          - text: "Estimate Richness"
-            href: functions/estimate-richness.qmd
-          # Add more here as needed
+          - text: "Estimate Biomass"
+            href: functions/estimate-biomass.qmd
+          - text: "Estimate Total Biomass"
+            href: functions/estimate-totalbiomass.qmd
+          - text: "Estimate Density"
+            href: functions/estimate-density.qmd
+          - text: "Estimate Occurrence"
+            href: functions/estimate-occurrence.qmd
+          - text: "Estimate Length Frequency"
+            href: functions/estimate-lf.qmd
+          - text: "Estimate Length"
+            href: functions/estimate-lbar.qmd
       - text: "Visualization"
         href: visualization.qmd
-      - text: "Exporting Data"
-        href: export.qmd
-      - text: "Testing"
-        href: testing.qmd
       - text: "Troubleshooting"
         href: troubleshooting.qmd
       - text: "Appendix"
         href: appendix.qmd
   page-footer:
-    left: "© 2025 Your Name or Organization"
+    left: "© 2025 Jeremiah Blondeau|NOAA Fisheries"
     right: "Built with [Quarto](https://quarto.org/)"
 
 format:
   html:
     theme: cosmo
     toc: true
-output-dir: docs

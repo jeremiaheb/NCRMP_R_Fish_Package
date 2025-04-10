@@ -1,0 +1,20 @@
+---
+title: "Total Biomass"
+format: html
+---
+
+## Function: `getDomainTotalBiomass()`
+
+### Purpose
+
+Calculates total biomass kg.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainTotalBiomass()
+```
+
+### Output

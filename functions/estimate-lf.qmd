@@ -1,0 +1,20 @@
+---
+title: "Length Frequency"
+format: html
+---
+
+## Function: `getDomainLengthFrequency()`
+
+### Purpose
+
+Calculates length frequency.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainLengthFrequency()
+```
+
+### Output

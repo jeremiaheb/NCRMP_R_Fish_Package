@@ -1,0 +1,20 @@
+---
+title: "Abundance"
+format: html
+---
+
+## Function: `getDomainAbundance()`
+
+### Purpose
+
+Calculates total species abundance.
+
+### Usage
+
+```{r}
+#| echo: true
+#| eval: false
+getDomainAbundance()
+```
+
+### Output
