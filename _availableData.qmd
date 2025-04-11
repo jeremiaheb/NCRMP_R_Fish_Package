@@ -1,0 +1,29 @@
+---
+format: html
+---
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+library(kableExtra)
+data <- read_csv("data/available_data.csv")
+```
+
+```{r}
+#| echo: false
+#| warning: false
+data %>% 
+  rbind(.,data.frame(Region = "Dry Tortugas", Year = 2020, survey = "")) %>% 
+  pivot_wider(id_cols = c(Year), names_from = Region, values_from = survey) %>%
+  replace(is.na(.), "") %>% 
+  arrange(Year) %>% 
+  kbl(
+    booktabs = T, 
+    align = "c",
+    linesep = "") %>% 
+  kable_styling(latex_options = c("striped", "condensed", "hold_position"),
+                font_size = 8) %>% 
+  column_spec(2:8 ,bold = T)
+```
+

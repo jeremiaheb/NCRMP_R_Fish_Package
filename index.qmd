@@ -13,3 +13,7 @@ This guide will help you with:
 -   Explore individual functions using the Function Reference tab
 -   [Visualization](visualization.qmd) of results
 -   [Troubleshooting](troubleshooting.qmd) common issues
+
+**X =  survey data available as of Spring 2025**
+
+{{< include _availableData.qmd >}}

@@ -42,7 +42,7 @@ You can also download multiple years and/or regions into one object (see @sec-Av
 # and range of years 1999:2024
 All_Keys <- getRvcData(years = 1999:2024, regions = "FLA KEYS") #All years in the Keys
 
-# or 2 specifc years in 2 specific regions
+# or 2 specific years in 2 specific regions
 USVI <- getRvcData(years = c(2017, 2023), regions = c("STTSTJ", "STX")) #Only 2017 and 2023 in U.S. Virgin Islands
 ```
 
@@ -62,12 +62,5 @@ glimpse(FKEYS2024)
 
 **As of Spring 2025**
 
-|   | 1999 | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 | 2010 | 2011 | 2012 | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
-|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| **Dry Tortugas** | **X** | **X** |  |  |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  | **X** |  |  | **X** |  | **X** | **X** |
-| **Florida Keys** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** | **X** |  | **X** |  | **X** |  | **X** |  |  |  | **X** |  | **X** |
-| **S.E. Florida** |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** | **X** | **X** | **X** |  | **X** |  |  | **X** | **X** |  | **X** |
-| **Flower Gardens** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  |  |  | **X** | **X** | **X** |
-| **Puerto Rico** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  |  | **X** |  | **X** |  | **X** |  |
-| **St. Thomas/John** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  | **X** |  | **X** |  | **X** |  |
-| **St. Croix** |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | **X** |  | **X** |  | **X** |  | **X** |  |
+{{< include _availableData.qmd >}}
+

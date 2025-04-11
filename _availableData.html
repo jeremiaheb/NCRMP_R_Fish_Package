@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>downloading – NCRMP Fish R Package</title>
+<title>availabledata</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,286 +20,36 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="_availableData_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_availableData_files/libs/quarto-html/quarto.js"></script>
+<script src="_availableData_files/libs/quarto-html/popper.min.js"></script>
+<script src="_availableData_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_availableData_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_availableData_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_availableData_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_availableData_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_availableData_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_availableData_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="_availableData_files/libs/kePrint-0.0.1/kePrint.js"></script>
 
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="_availableData_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 
 </head>
 
-<body class="nav-fixed">
+<body class="fullcontent">
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">NCRMP Fish R Package</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./installation.html"> 
-<span class="menu-text">Installation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./downloading.html" aria-current="page"> 
-<span class="menu-text">Downloading Data</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./quick-start.html"> 
-<span class="menu-text">Quick Start</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-function-reference" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Function Reference</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-function-reference">    
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-abundance.html">
- <span class="dropdown-text">Estimate Abundance</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-biomass.html">
- <span class="dropdown-text">Estimate Biomass</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-totalbiomass.html">
- <span class="dropdown-text">Estimate Total Biomass</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-density.html">
- <span class="dropdown-text">Estimate Density</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-occurrence.html">
- <span class="dropdown-text">Estimate Occurrence</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-lf.html">
- <span class="dropdown-text">Estimate Length Frequency</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./functions/estimate-lbar.html">
- <span class="dropdown-text">Estimate Length</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./visualization.html"> 
-<span class="menu-text">Visualization</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./troubleshooting.html"> 
-<span class="menu-text">Troubleshooting</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./appendix.html"> 
-<span class="menu-text">Appendix</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#downloading-the-data" id="toc-downloading-the-data" class="nav-link active" data-scroll-target="#downloading-the-data"><span class="header-section-number">1</span> Downloading the Data</a></li>
-  <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="header-section-number">2</span> Structure of the data</a></li>
-  <li><a href="#sec-AvaliableData" id="toc-sec-AvaliableData" class="nav-link" data-scroll-target="#sec-AvaliableData"><span class="header-section-number">3</span> Available Data</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
 <main class="content" id="quarto-document-content">
 
 
 
 
-<section id="downloading-the-data" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="downloading-the-data"><span class="header-section-number">1</span> Downloading the Data</h2>
-<p>The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>FKEYS2024 <span class="ot">&lt;-</span> <span class="fu">getRvcData</span>(<span class="at">years =</span> <span class="dv">2024</span>, <span class="at">regions =</span> <span class="st">"FLA KEYS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>the ‘regions’ parameter takes a specific formatted argument</p>
-<div class="line-block"><strong>“FLA KEYS”</strong> : Florida Keys (Miami/Dade south to Key West)<br>
-<strong>“DRY TORT”</strong> : Dry Tortugas<br>
-<strong>“SEFCRI”</strong> : Southeast Florida (Miami/Dade north to Martin County)<br>
-<strong>“FGBNMS”</strong> : Flower Garden Banks National Marine Sanctuary<br>
-<strong>“PRICO”</strong> : Puerto Rico<br>
-<strong>“STTSTJ”</strong> : St.&nbsp;Thomas and St.&nbsp;John<br>
-<strong>“STX”</strong> : St.&nbsp;Croix</div>
-<hr>
-<p>You can also download multiple years and/or regions into one object (see <a href="#sec-AvaliableData" class="quarto-xref">Section&nbsp;3</a>)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and range of years 1999:2024</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>All_Keys <span class="ot">&lt;-</span> <span class="fu">getRvcData</span>(<span class="at">years =</span> <span class="dv">1999</span><span class="sc">:</span><span class="dv">2024</span>, <span class="at">regions =</span> <span class="st">"FLA KEYS"</span>) <span class="co">#All years in the Keys</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or 2 specific years in 2 specific regions</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>USVI <span class="ot">&lt;-</span> <span class="fu">getRvcData</span>(<span class="at">years =</span> <span class="fu">c</span>(<span class="dv">2017</span>, <span class="dv">2023</span>), <span class="at">regions =</span> <span class="fu">c</span>(<span class="st">"STTSTJ"</span>, <span class="st">"STX"</span>)) <span class="co">#Only 2017 and 2023 in U.S. Virgin Islands</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="structure-of-the-data" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="structure-of-the-data"><span class="header-section-number">2</span> Structure of the data</h2>
-<p>When using the <strong>getRVCData()</strong> function, the following structure is returned and all other functions in the R-package expect this structure. The object returned is a list of 3 dataframes</p>
-<ol type="1">
-<li>sample_data: numbers at length for each species (with some additional meta data)</li>
-<li>stratum_data: number of grid cells for each strata (this provided weighting factors)</li>
-<li>taxonomic_data: additional species information</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(FKEYS2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>List of 3
- $ sample_data   :'data.frame': 356254 obs. of  24 variables:
-  ..$ PRIMARY_SAMPLE_UNIT  : int [1:356254] 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 ...
-  ..$ YEAR                 : int [1:356254] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...
-  ..$ MONTH                : int [1:356254] 6 6 6 6 6 6 6 6 6 6 ...
-  ..$ DAY                  : int [1:356254] 27 27 27 27 27 27 27 27 27 27 ...
-  ..$ STATION_NR           : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...
-  ..$ LAT_DEGREES          : num [1:356254] 24.5 24.5 24.5 24.5 24.5 ...
-  ..$ LON_DEGREES          : num [1:356254] -81.9 -81.9 -81.9 -81.9 -81.9 ...
-  ..$ DEPTH                : num [1:356254] 3.51 3.51 3.51 3.51 3.51 ...
-  ..$ UNDERWATER_VISIBILITY: num [1:356254] 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 6.5 ...
-  ..$ MAPGRID_NR           : int [1:356254] 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 2121978 ...
-  ..$ HABITAT_CD           : chr [1:356254] "ISOL_LR" "ISOL_LR" "ISOL_LR" "ISOL_LR" ...
-  ..$ ZONE_NR              : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...
-  ..$ SUBREGION_NR         : int [1:356254] 8 8 8 8 8 8 8 8 8 8 ...
-  ..$ MPA_NR               : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...
-  ..$ SPECIES_NR           : int [1:356254] 1 2 3 4 5 6 7 7 7 8 ...
-  ..$ SPECIES_CD           : chr [1:356254] "ANT OCEL" "APO BINO" "MAL GILL" "MAL VERS" ...
-  ..$ LEN                  : num [1:356254] 0 0 0 0 0 0 0 5 6 0 ...
-  ..$ NUM                  : num [1:356254] 0 0 0 0 0 0 0 0.5 0.5 0 ...
-  ..$ TIME_SEEN            : int [1:356254] 1 1 1 1 1 1 1 1 1 1 ...
-  ..$ PROT                 : int [1:356254] 0 0 0 0 0 0 0 0 0 0 ...
-  ..$ DEPTH_CLASS          : chr [1:356254] "D1" "D1" "D1" "D1" ...
-  ..$ RUGOSITY_CLASS       : chr [1:356254] "R1" "R1" "R1" "R1" ...
-  ..$ STRAT                : chr [1:356254] "FK01" "FK01" "FK01" "FK01" ...
-  ..$ REGION               : chr [1:356254] "FLA KEYS" "FLA KEYS" "FLA KEYS" "FLA KEYS" ...
- $ stratum_data  :'data.frame': 15 obs. of  7 variables:
-  ..$ REGION     : chr [1:15] "FLA KEYS" "FLA KEYS" "FLA KEYS" "FLA KEYS" ...
-  ..$ YEAR       : int [1:15] 2024 2024 2024 2024 2024 2024 2024 2024 2024 2024 ...
-  ..$ PROT       : int [1:15] 0 0 0 0 0 0 0 0 1 1 ...
-  ..$ STRAT      : chr [1:15] "FK01" "FK02" "FK03" "FK04" ...
-  ..$ NTOT       : int [1:15] 4372 29583 15126 43717 16855 23296 20275 23328 447 766 ...
-  ..$ GRID_SIZE  : int [1:15] 50 50 50 50 50 50 50 50 50 50 ...
-  ..$ STAGE_LEVEL: int [1:15] 1 1 1 1 1 1 1 1 1 1 ...
- $ taxonomic_data:'data.frame': 487 obs. of  8 variables:
-  ..$ SPECIES_CD: chr [1:487] "ABL HIAN" "ABU SAXA" "ABU TAUR" "ACA ASPE" ...
-  ..$ FAMILY    : chr [1:487] "Belonidae" "Pomacentridae" "Pomacentridae" "Chaenopsidae" ...
-  ..$ SCINAME   : chr [1:487] "Ablennes hians" "Abudefduf saxatilis" "Abudefduf taurus" "Acanthemblemaria aspera" ...
-  ..$ COMNAME   : chr [1:487] "flat needlefish" "sergeant major" "night sergeant" "roughhead blenny" ...
-  ..$ LC        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...
-  ..$ LM        : num [1:487] NA NA NA NA NA NA NA NA NA NA ...
-  ..$ WLEN_A    : num [1:487] NA 1.64e-05 NA 8.40e-06 8.40e-06 8.40e-06 NA 8.40e-06 NA 1.79e-05 ...
-  ..$ WLEN_B    : num [1:487] NA 3.14 NA 2.96 2.96 ...</code></pre>
-</div>
-</div>
-</section>
-<section id="sec-AvaliableData" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="sec-AvaliableData"><span class="header-section-number">3</span> Available Data</h2>
-<p><strong>As of Spring 2025</strong></p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
@@ -583,10 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 
-
-</section>
-
-</main> <!-- /main -->
+</main>
+<!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1008,19 +756,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>© 2025 Jeremiah Blondeau|NOAA Fisheries</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org/">Quarto</a></p>
-</div>
-  </div>
-</footer>
 
 
 
