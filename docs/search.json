@@ -116,28 +116,28 @@
     "href": "functions/estimate-abundance.html",
     "title": "Abundance",
     "section": "",
-    "text": "Calculates total species abundance at the domain level.\n\n\n\n\ngetDomainAbundance()"
+    "text": "Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.\n\n\n\n\ngetDomainAbundance()"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getdomainabundance",
     "href": "functions/estimate-abundance.html#function-getdomainabundance",
     "title": "Abundance",
     "section": "",
-    "text": "Calculates total species abundance at the domain level.\n\n\n\n\ngetDomainAbundance()"
+    "text": "Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.\n\n\n\n\ngetDomainAbundance()"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getstratumabundance",
     "href": "functions/estimate-abundance.html#function-getstratumabundance",
     "title": "Abundance",
     "section": "Function: getStratumAbundance()",
-    "text": "Function: getStratumAbundance()\n\nPurpose\nCalculates total species abundance at the stratum level.\n\n\nUsage\n\ngetStratumAbundance()\n\n\n\nOutput"
+    "text": "Function: getStratumAbundance()\n\nPurpose\nCalculates relative species abundance at the stratum level. This relative estimate is scaled by the number of PSUs in a given Stratum.\n\n\nUsage\n\ngetStratumAbundance()\n\n\n\nOutput"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getpsuabundance",
     "href": "functions/estimate-abundance.html#function-getpsuabundance",
     "title": "Abundance",
     "section": "Function: getPSUAbundance()",
-    "text": "Function: getPSUAbundance()\n\nPurpose\nCalculates total species abundance at the Primary Sample Unit (PSU) level.\n\n\nUsage\n\ngetPSUAbundance()\n\n\n\nOutput"
+    "text": "Function: getPSUAbundance()\n\nPurpose\nCalculates relative species abundance at the Primary Sample Unit (PSU) level. This relative estimate is scaled by the number of Secondary Sampling Units (SSU) available in PSU.\n\n\nUsage\n\ngetPSUAbundance()\n\n\n\nOutput"
   },
   {
     "objectID": "functions/estimate-density.html",

@@ -144,31 +144,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-function-reference">    
         <li>
     <a class="dropdown-item" href="../functions/estimate-abundance.html">
- <span class="dropdown-text">Estimate Abundance</span></a>
+ <span class="dropdown-text">Abundance</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../functions/estimate-biomass.html">
- <span class="dropdown-text">Estimate Biomass</span></a>
+ <span class="dropdown-text">Biomass</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../functions/estimate-totalbiomass.html">
- <span class="dropdown-text">Estimate Total Biomass</span></a>
+ <span class="dropdown-text">Total Biomass</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../functions/estimate-density.html">
- <span class="dropdown-text">Estimate Density</span></a>
+ <span class="dropdown-text">Density</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../functions/estimate-occurrence.html">
- <span class="dropdown-text">Estimate Occurrence</span></a>
+ <span class="dropdown-text">Occurrence</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../functions/estimate-lf.html">
- <span class="dropdown-text">Estimate Length Frequency</span></a>
+ <span class="dropdown-text">Length Frequency</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../functions/estimate-lbar.html">
- <span class="dropdown-text">Estimate Length</span></a>
+ <span class="dropdown-text">Length</span></a>
   </li>  
     </ul>
   </li>
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="function-getdomainabundance">Function: <code>getDomainAbundance()</code></h2>
 <section id="purpose" class="level3">
 <h3 class="anchored" data-anchor-id="purpose">Purpose</h3>
-<p>Calculates total species abundance at the domain level.</p>
+<p>Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.</p>
 </section>
 <section id="usage" class="level3">
 <h3 class="anchored" data-anchor-id="usage">Usage</h3>
@@ -263,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="function-getstratumabundance">Function: <code>getStratumAbundance()</code></h2>
 <section id="purpose-1" class="level3">
 <h3 class="anchored" data-anchor-id="purpose-1">Purpose</h3>
-<p>Calculates total species abundance at the stratum level.</p>
+<p>Calculates relative species abundance at the stratum level. This relative estimate is scaled by the number of PSUs in a given Stratum.</p>
 </section>
 <section id="usage-1" class="level3">
 <h3 class="anchored" data-anchor-id="usage-1">Usage</h3>
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="function-getpsuabundance">Function: <code>getPSUAbundance()</code></h2>
 <section id="purpose-2" class="level3">
 <h3 class="anchored" data-anchor-id="purpose-2">Purpose</h3>
-<p>Calculates total species abundance at the Primary Sample Unit (PSU) level.</p>
+<p>Calculates relative species abundance at the Primary Sample Unit (PSU) level. This relative estimate is scaled by the number of Secondary Sampling Units (SSU) available in PSU.</p>
 </section>
 <section id="usage-2" class="level3">
 <h3 class="anchored" data-anchor-id="usage-2">Usage</h3>

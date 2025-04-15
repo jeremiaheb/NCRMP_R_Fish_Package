@@ -7,7 +7,7 @@ format: html
 
 ### Purpose
 
-Calculates total species abundance at the domain level.
+Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.
 
 ### Usage
 
@@ -23,7 +23,7 @@ getDomainAbundance()
 
 ### Purpose
 
-Calculates total species abundance at the stratum level.
+Calculates relative species abundance at the stratum level. This relative estimate is scaled by the number of PSUs in a given Stratum.
 
 ### Usage
 
@@ -39,7 +39,7 @@ getStratumAbundance()
 
 ### Purpose
 
-Calculates total species abundance at the Primary Sample Unit (PSU) level.
+Calculates relative species abundance at the Primary Sample Unit (PSU) level.  This relative estimate is scaled by the number of Secondary Sampling Units (SSU) available in PSU.  
 
 ### Usage
 

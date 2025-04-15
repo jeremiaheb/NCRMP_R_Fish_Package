@@ -16,19 +16,19 @@ website:
         href: quick-start.qmd
       - text: "Function Reference"
         menu:
-          - text: "Estimate Abundance"
+          - text: "Abundance"
             href: functions/estimate-abundance.qmd
-          - text: "Estimate Biomass"
+          - text: "Biomass"
             href: functions/estimate-biomass.qmd
-          - text: "Estimate Total Biomass"
+          - text: "Total Biomass"
             href: functions/estimate-totalbiomass.qmd
-          - text: "Estimate Density"
+          - text: "Density"
             href: functions/estimate-density.qmd
-          - text: "Estimate Occurrence"
+          - text: "Occurrence"
             href: functions/estimate-occurrence.qmd
-          - text: "Estimate Length Frequency"
+          - text: "Length Frequency"
             href: functions/estimate-lf.qmd
-          - text: "Estimate Length"
+          - text: "Length"
             href: functions/estimate-lbar.qmd
       - text: "Visualization"
         href: visualization.qmd
