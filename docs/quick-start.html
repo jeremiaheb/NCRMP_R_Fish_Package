@@ -176,6 +176,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./filters.html"> 
+<span class="menu-text">Filters</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./visualization.html"> 
 <span class="menu-text">Visualization</span></a>
   </li>  
@@ -259,21 +263,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>RH_density <span class="ot">&lt;-</span> <span class="fu">getDomainDensity</span>(STTSTJ, <span class="st">"EPI GUTT"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(RH_density) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(RH_density) <span class="sc">%&gt;%</span> <span class="fu">select</span>(YEAR<span class="sc">:</span>n) <span class="sc">%&gt;%</span> <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 9%">
-<col style="width: 14%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 5%">
-<col style="width: 3%">
-<col style="width: 7%">
-<col style="width: 11%">
-<col style="width: 15%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: right;">YEAR</th>
@@ -282,10 +274,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th style="text-align: right;">density</th>
 <th style="text-align: right;">var</th>
 <th style="text-align: right;">n</th>
-<th style="text-align: left;">nm</th>
-<th style="text-align: right;">N</th>
-<th style="text-align: right;">NM</th>
-<th style="text-align: right;">STAGE_LEVEL</th>
 </tr>
 </thead>
 <tbody>
@@ -296,10 +284,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.4459786</td>
 <td style="text-align: right;">0.0038043</td>
 <td style="text-align: right;">236</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">50644</td>
-<td style="text-align: right;">716466.0</td>
-<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2019</td>
@@ -308,10 +292,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.5158166</td>
 <td style="text-align: right;">0.0030699</td>
 <td style="text-align: right;">322</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">50644</td>
-<td style="text-align: right;">716466.0</td>
-<td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">2021</td>
@@ -320,10 +300,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.4815063</td>
 <td style="text-align: right;">0.0028042</td>
 <td style="text-align: right;">165</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">50644</td>
-<td style="text-align: right;">716466.0</td>
-<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2023</td>
@@ -332,10 +308,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0.4351223</td>
 <td style="text-align: right;">0.0020429</td>
 <td style="text-align: right;">287</td>
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">50567</td>
-<td style="text-align: right;">715376.7</td>
-<td style="text-align: right;">1</td>
 </tr>
 </tbody>
 </table>
@@ -805,7 +777,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

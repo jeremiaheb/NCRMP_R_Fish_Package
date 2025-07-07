@@ -3,6 +3,8 @@ title: "Abundance"
 format: html
 ---
 
+{{< include ../_data.qmd >}}
+
 ## Function: `getDomainAbundance()`
 
 ### Purpose
@@ -18,6 +20,14 @@ getDomainAbundance()
 ```
 
 ### Output
+
+```{r}
+#| echo: true
+#| warning: FALSE
+getDomainAbundance(FKEYS2024, "ocy chry") %>% 
+  select(YEAR:n) %>% 
+  kableExtra::kable()
+```
 
 ## Function: `getStratumAbundance()`
 
@@ -35,6 +45,15 @@ getStratumAbundance()
 
 ### Output
 
+
+```{r}
+#| echo: true
+#| warning: FALSE
+getStratumAbundance(FKEYS2024, "ocy chry") %>% 
+  select(YEAR:n) %>% 
+  kableExtra::kable()
+```
+
 ## Function: `getPSUAbundance()`
 
 ### Purpose
@@ -50,3 +69,11 @@ getPSUAbundance()
 ```
 
 ### Output
+
+```{r}
+#| echo: true
+#| warning: FALSE
+getPSUAbundance(FKEYS2024, "ocy chry") %>%
+  head() %>% 
+  kableExtra::kable()
+```

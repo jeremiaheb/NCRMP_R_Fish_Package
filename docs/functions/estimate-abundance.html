@@ -173,6 +173,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="../filters.html"> 
+<span class="menu-text">Filters</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../visualization.html"> 
 <span class="menu-text">Visualization</span></a>
   </li>  
@@ -257,6 +261,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="output" class="level3">
 <h3 class="anchored" data-anchor-id="output">Output</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getDomainAbundance</span>(FKEYS2024, <span class="st">"ocy chry"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(YEAR<span class="sc">:</span>n) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">YEAR</th>
+<th style="text-align: left;">REGION</th>
+<th style="text-align: left;">SPECIES_CD</th>
+<th style="text-align: right;">abundance</th>
+<th style="text-align: right;">var</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">17580076</td>
+<td style="text-align: right;">2.952541e+12</td>
+<td style="text-align: right;">622</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 </section>
 <section id="function-getstratumabundance" class="level2">
@@ -268,11 +301,194 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-1" class="level3">
 <h3 class="anchored" data-anchor-id="usage-1">Usage</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getStratumAbundance</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getStratumAbundance</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="output-1" class="level3">
 <h3 class="anchored" data-anchor-id="output-1">Output</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getStratumAbundance</span>(FKEYS2024, <span class="st">"ocy chry"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(YEAR<span class="sc">:</span>n) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 13%">
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">YEAR</th>
+<th style="text-align: left;">REGION</th>
+<th style="text-align: left;">STRAT</th>
+<th style="text-align: right;">PROT</th>
+<th style="text-align: left;">SPECIES_CD</th>
+<th style="text-align: right;">abundance</th>
+<th style="text-align: right;">var</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">34563.877</td>
+<td style="text-align: right;">1.813044e+08</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">4110.442</td>
+<td style="text-align: right;">2.400015e+06</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK02</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">2061568.167</td>
+<td style="text-align: right;">6.273831e+10</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK02</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">40095.728</td>
+<td style="text-align: right;">6.883363e+07</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK03</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1718815.884</td>
+<td style="text-align: right;">8.331036e+10</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK03</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">46996.686</td>
+<td style="text-align: right;">2.060856e+08</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK04</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">2816999.373</td>
+<td style="text-align: right;">3.612158e+11</td>
+<td style="text-align: right;">73</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK04</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">236902.970</td>
+<td style="text-align: right;">1.810878e+09</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK05</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1795488.939</td>
+<td style="text-align: right;">4.068037e+10</td>
+<td style="text-align: right;">67</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK05</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">233279.390</td>
+<td style="text-align: right;">1.201280e+09</td>
+<td style="text-align: right;">93</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK06</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">842236.956</td>
+<td style="text-align: right;">8.811911e+10</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK06</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">18207.325</td>
+<td style="text-align: right;">9.448928e+07</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK07</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">2376328.210</td>
+<td style="text-align: right;">2.203059e+11</td>
+<td style="text-align: right;">72</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK07</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">138813.865</td>
+<td style="text-align: right;">7.959701e+08</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK09</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">5215668.512</td>
+<td style="text-align: right;">2.091810e+12</td>
+<td style="text-align: right;">51</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </section>
 </section>
 <section id="function-getpsuabundance" class="level2">
@@ -284,11 +500,112 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="usage-2" class="level3">
 <h3 class="anchored" data-anchor-id="usage-2">Usage</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getPSUAbundance</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getPSUAbundance</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="output-2" class="level3">
 <h3 class="anchored" data-anchor-id="output-2">Output</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getPSUAbundance</span>(FKEYS2024, <span class="st">"ocy chry"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 27%">
+<col style="width: 15%">
+<col style="width: 4%">
+<col style="width: 5%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">YEAR</th>
+<th style="text-align: left;">REGION</th>
+<th style="text-align: left;">STRAT</th>
+<th style="text-align: right;">PROT</th>
+<th style="text-align: right;">PRIMARY_SAMPLE_UNIT</th>
+<th style="text-align: left;">SPECIES_CD</th>
+<th style="text-align: right;">m</th>
+<th style="text-align: right;">var</th>
+<th style="text-align: right;">abundance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1000</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1001</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1002</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1005</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1006</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2024</td>
+<td style="text-align: left;">FLA KEYS</td>
+<td style="text-align: left;">FK01</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1007</td>
+<td style="text-align: left;">OCY CHRY</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 </section>

@@ -8,10 +8,11 @@ number-sections: true
 #| echo: false
 #| warning: false
 library(tidyverse)
+library(rvc)
 FKEYS2024 <- readRDS("data/FKEYS2024.rds")
 ```
 
-## Downloading the Data
+## Downloading the Data {#sec-GetRvcData}
 
 The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment
 
@@ -63,4 +64,3 @@ glimpse(FKEYS2024)
 **As of Spring 2025**
 
 {{< include _availableData.qmd >}}
-

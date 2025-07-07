@@ -30,6 +30,8 @@ website:
             href: functions/estimate-lf.qmd
           - text: "Length"
             href: functions/estimate-lbar.qmd
+      - text: "Filters"
+        href: filters.qmd            
       - text: "Visualization"
         href: visualization.qmd
       - text: "Troubleshooting"

@@ -177,6 +177,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./filters.html"> 
+<span class="menu-text">Filters</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./visualization.html"> 
 <span class="menu-text">Visualization</span></a>
   </li>  
@@ -204,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#downloading-the-data" id="toc-downloading-the-data" class="nav-link active" data-scroll-target="#downloading-the-data"><span class="header-section-number">1</span> Downloading the Data</a></li>
+  <li><a href="#sec-GetRvcData" id="toc-sec-GetRvcData" class="nav-link active" data-scroll-target="#sec-GetRvcData"><span class="header-section-number">1</span> Downloading the Data</a></li>
   <li><a href="#structure-of-the-data" id="toc-structure-of-the-data" class="nav-link" data-scroll-target="#structure-of-the-data"><span class="header-section-number">2</span> Structure of the data</a></li>
   <li><a href="#sec-AvaliableData" id="toc-sec-AvaliableData" class="nav-link" data-scroll-target="#sec-AvaliableData"><span class="header-section-number">3</span> Available Data</a></li>
   </ul>
@@ -216,8 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="downloading-the-data" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="downloading-the-data"><span class="header-section-number">1</span> Downloading the Data</h2>
+<section id="sec-GetRvcData" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sec-GetRvcData"><span class="header-section-number">1</span> Downloading the Data</h2>
 <p>The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>FKEYS2024 <span class="ot">&lt;-</span> <span class="fu">getRvcData</span>(<span class="at">years =</span> <span class="dv">2024</span>, <span class="at">regions =</span> <span class="st">"FLA KEYS"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

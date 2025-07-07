@@ -1,0 +1,14 @@
+---
+title: "Filters"
+format: html
+---
+
+![](images/Function%20Diagram.jpg){.lightbox fig-align="center"}
+
+## Optional Filters and Parameters
+
+All functions have two (2) required parameters that must be passed arguments
+
+1\) x: the object returned from [getRVCData()](downloading.qmd#sec-GetRvcData)
+
+2\) species: species (code, common name or scientific name) or list of species

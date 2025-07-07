@@ -3,6 +3,8 @@ title: "Biomass"
 format: html
 ---
 
+{{< include ../_data.qmd >}}
+
 ## Function: `getDomainBiomass()`
 
 ### Purpose
@@ -18,6 +20,14 @@ getDomainBiomass()
 ```
 
 ### Output
+
+```{r}
+#| echo: true
+#| warning: FALSE
+getDomainBiomass(STTSTJ, "spa viri") %>% 
+  select(YEAR:n) %>% 
+  kableExtra::kable()
+```
 
 ## Function: `getStratumBiomass()`
 
@@ -35,6 +45,14 @@ getStratumBiomass()
 
 ### Output
 
+```{r}
+#| echo: true
+#| warning: FALSE
+getStratumBiomass(STTSTJ, "spa viri") %>% 
+  select(YEAR:n) %>% 
+  kableExtra::kable()
+```
+
 ## Function: `getPSUBiomass()`
 
 ### Purpose
@@ -50,3 +68,11 @@ getPSUBiomass()
 ```
 
 ### Output
+
+```{r}
+#| echo: true
+#| warning: FALSE
+getPSUBiomass(STTSTJ, "spa viri") %>%
+  head() %>% 
+  kableExtra::kable()
+```

@@ -4,7 +4,7 @@
     "href": "quick-start.html#example-workflow",
     "title": "Quick-start",
     "section": "Example Workflow",
-    "text": "Example Workflow\n\n“What is the mean density of Red Hind (Epinephelus guttatus) over time in St. Thomas U.S. Virgin Islands”\n\n\nload necessary libraries\n\n\nlibrary(rvc)\nlibrary(kableExtra)# Display a pretty table\nlibrary(ggplot2)\n\n\ndownload region and years of interest\n\n\nSTTSTJ &lt;- getRvcData(years = 2017:2023, regions = \"STTSTJ\")\n\n\nestimate density using the data object downloading from step 2\n\n\nRH_density &lt;- getDomainDensity(STTSTJ, \"EPI GUTT\")\n\nhead(RH_density) %&gt;% kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\ndensity\nvar\nn\nnm\nN\nNM\nSTAGE_LEVEL\n\n\n\n\n2017\nSTTSTJ\nEPI GUTT\n0.4459786\n0.0038043\n236\nNA\n50644\n716466.0\n1\n\n\n2019\nSTTSTJ\nEPI GUTT\n0.5158166\n0.0030699\n322\nNA\n50644\n716466.0\n1\n\n\n2021\nSTTSTJ\nEPI GUTT\n0.4815063\n0.0028042\n165\nNA\n50644\n716466.0\n1\n\n\n2023\nSTTSTJ\nEPI GUTT\n0.4351223\n0.0020429\n287\nNA\n50567\n715376.7\n1\n\n\n\n\n\n\ncreate additional column and plot via ggplot2\n\n\nRH_density %&gt;% \n  mutate(SE = sqrt(var)) %&gt;% \n  ggplot(aes(x = YEAR, y = density)) +\n    geom_line() +\n    geom_point(size = 2) +\n    geom_errorbar(aes(ymin = density - SE, ymax = density + SE),                  \n                  width = 0.25,\n                  size = 0.5) +\n  theme_classic()+\n  ylab(expression(paste(\"Density (ind/\", m^2 ,\")\"))) +\n  xlab(\"Year\") +\n  ggtitle(\"St. Thomas & St. John Red Hind Density\") +\n  theme(plot.title = element_text(hjust = 0.5))"
+    "text": "Example Workflow\n\n“What is the mean density of Red Hind (Epinephelus guttatus) over time in St. Thomas U.S. Virgin Islands”\n\n\nload necessary libraries\n\n\nlibrary(rvc)\nlibrary(kableExtra)# Display a pretty table\nlibrary(ggplot2)\n\n\ndownload region and years of interest\n\n\nSTTSTJ &lt;- getRvcData(years = 2017:2023, regions = \"STTSTJ\")\n\n\nestimate density using the data object downloading from step 2\n\n\nRH_density &lt;- getDomainDensity(STTSTJ, \"EPI GUTT\")\n\nhead(RH_density) %&gt;% select(YEAR:n) %&gt;% kable()\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\ndensity\nvar\nn\n\n\n\n\n2017\nSTTSTJ\nEPI GUTT\n0.4459786\n0.0038043\n236\n\n\n2019\nSTTSTJ\nEPI GUTT\n0.5158166\n0.0030699\n322\n\n\n2021\nSTTSTJ\nEPI GUTT\n0.4815063\n0.0028042\n165\n\n\n2023\nSTTSTJ\nEPI GUTT\n0.4351223\n0.0020429\n287\n\n\n\n\n\n\ncreate additional column and plot via ggplot2\n\n\nRH_density %&gt;% \n  mutate(SE = sqrt(var)) %&gt;% \n  ggplot(aes(x = YEAR, y = density)) +\n    geom_line() +\n    geom_point(size = 2) +\n    geom_errorbar(aes(ymin = density - SE, ymax = density + SE),                  \n                  width = 0.25,\n                  size = 0.5) +\n  theme_classic()+\n  ylab(expression(paste(\"Density (ind/\", m^2 ,\")\"))) +\n  xlab(\"Year\") +\n  ggtitle(\"St. Thomas & St. John Red Hind Density\") +\n  theme(plot.title = element_text(hjust = 0.5))"
   },
   {
     "objectID": "index.html",
@@ -53,28 +53,42 @@
     "href": "functions/estimate-biomass.html",
     "title": "Biomass",
     "section": "",
-    "text": "Calculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainBiomass()"
+    "text": "Calculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainBiomass()\n\n\n\n\n\ngetDomainBiomass(STTSTJ, \"spa viri\") %&gt;% \n  select(YEAR:n) %&gt;% \n  kableExtra::kable()\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\nbiomass\nvar\nn\n\n\n\n\n2017\nSTTSTJ\nSPA VIRI\n0.2088178\n0.0005979\n236\n\n\n2019\nSTTSTJ\nSPA VIRI\n0.2294132\n0.0017350\n322\n\n\n2021\nSTTSTJ\nSPA VIRI\n0.1631276\n0.0004347\n165\n\n\n2023\nSTTSTJ\nSPA VIRI\n0.2418767\n0.0010974\n287"
   },
   {
     "objectID": "functions/estimate-biomass.html#function-getdomainbiomass",
     "href": "functions/estimate-biomass.html#function-getdomainbiomass",
     "title": "Biomass",
     "section": "",
-    "text": "Calculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainBiomass()"
+    "text": "Calculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the domain level.\n\n\n\n\ngetDomainBiomass()\n\n\n\n\n\ngetDomainBiomass(STTSTJ, \"spa viri\") %&gt;% \n  select(YEAR:n) %&gt;% \n  kableExtra::kable()\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\nbiomass\nvar\nn\n\n\n\n\n2017\nSTTSTJ\nSPA VIRI\n0.2088178\n0.0005979\n236\n\n\n2019\nSTTSTJ\nSPA VIRI\n0.2294132\n0.0017350\n322\n\n\n2021\nSTTSTJ\nSPA VIRI\n0.1631276\n0.0004347\n165\n\n\n2023\nSTTSTJ\nSPA VIRI\n0.2418767\n0.0010974\n287"
   },
   {
     "objectID": "functions/estimate-biomass.html#function-getstratumbiomass",
     "href": "functions/estimate-biomass.html#function-getstratumbiomass",
     "title": "Biomass",
     "section": "Function: getStratumBiomass()",
-    "text": "Function: getStratumBiomass()\n\nPurpose\nCalculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the stratum level.\n\n\nUsage\n\ngetStratumBiomass()\n\n\n\nOutput"
+    "text": "Function: getStratumBiomass()\n\nPurpose\nCalculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the stratum level.\n\n\nUsage\n\ngetStratumBiomass()\n\n\n\nOutput\n\ngetStratumBiomass(STTSTJ, \"spa viri\") %&gt;% \n  select(YEAR:n) %&gt;% \n  kableExtra::kable()\n\n\n\n\nYEAR\nREGION\nSTRAT\nPROT\nSPECIES_CD\nbiomass\nvar\nn\n\n\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\nSPA VIRI\n0.5768673\n0.0289862\n38\n\n\n2017\nSTTSTJ\nAGRFSHLW\n0\nSPA VIRI\n0.3582542\n0.0029526\n36\n\n\n2017\nSTTSTJ\nBDRKDEEP\n0\nSPA VIRI\n0.0859075\n0.0043159\n2\n\n\n2017\nSTTSTJ\nBDRKSHLW\n0\nSPA VIRI\n0.2865189\n0.0051210\n21\n\n\n2017\nSTTSTJ\nHARDDEEP\n0\nSPA VIRI\n0.2580809\n0.0022497\n65\n\n\n2017\nSTTSTJ\nHARDSHLW\n0\nSPA VIRI\n0.0308755\n0.0009012\n3\n\n\n2017\nSTTSTJ\nPTRFDEEP\n0\nSPA VIRI\n0.2247723\n0.0051920\n18\n\n\n2017\nSTTSTJ\nPTRFSHLW\n0\nSPA VIRI\n0.2834632\n0.0083793\n13\n\n\n2017\nSTTSTJ\nPVMTDEEP\n0\nSPA VIRI\n0.0265353\n0.0002150\n22\n\n\n2017\nSTTSTJ\nPVMTSHLW\n0\nSPA VIRI\n0.1995398\n0.0098700\n6\n\n\n2017\nSTTSTJ\nSCRDEEP\n0\nSPA VIRI\n0.0390433\n0.0015195\n8\n\n\n2017\nSTTSTJ\nSCRSHLW\n0\nSPA VIRI\n0.0005871\n0.0000003\n4\n\n\n2019\nSTTSTJ\nAGRFDEEP\n0\nSPA VIRI\n0.3406302\n0.0037315\n60\n\n\n2019\nSTTSTJ\nAGRFSHLW\n0\nSPA VIRI\n0.3709338\n0.0041728\n46\n\n\n2019\nSTTSTJ\nBDRKDEEP\n0\nSPA VIRI\n1.1695039\n0.6982388\n3\n\n\n2019\nSTTSTJ\nBDRKSHLW\n0\nSPA VIRI\n0.8246738\n0.2451321\n32\n\n\n2019\nSTTSTJ\nHARDDEEP\n0\nSPA VIRI\n0.2101384\n0.0025747\n57\n\n\n2019\nSTTSTJ\nHARDSHLW\n0\nSPA VIRI\n0.4322328\n0.0143120\n11\n\n\n2019\nSTTSTJ\nPTRFDEEP\n0\nSPA VIRI\n0.3089974\n0.0050432\n31\n\n\n2019\nSTTSTJ\nPTRFSHLW\n0\nSPA VIRI\n0.5301796\n0.0264360\n13\n\n\n2019\nSTTSTJ\nPVMTDEEP\n0\nSPA VIRI\n0.0089098\n0.0000146\n26\n\n\n2019\nSTTSTJ\nPVMTSHLW\n0\nSPA VIRI\n0.2642971\n0.0249557\n18\n\n\n2019\nSTTSTJ\nSCRDEEP\n0\nSPA VIRI\n0.0556349\n0.0009225\n11\n\n\n2019\nSTTSTJ\nSCRSHLW\n0\nSPA VIRI\n0.0900780\n0.0040438\n14\n\n\n2021\nSTTSTJ\nAGRFDEEP\n0\nSPA VIRI\n0.2417041\n0.0052974\n26\n\n\n2021\nSTTSTJ\nAGRFSHLW\n0\nSPA VIRI\n0.3254879\n0.0073088\n14\n\n\n2021\nSTTSTJ\nBDRKDEEP\n0\nSPA VIRI\n0.2563874\nNA\n1\n\n\n2021\nSTTSTJ\nBDRKSHLW\n0\nSPA VIRI\n0.2063905\n0.0030538\n22\n\n\n2021\nSTTSTJ\nHARDDEEP\n0\nSPA VIRI\n0.2442616\n0.0024271\n51\n\n\n2021\nSTTSTJ\nHARDSHLW\n0\nSPA VIRI\n0.3826180\n0.0294632\n4\n\n\n2021\nSTTSTJ\nPTRFDEEP\n0\nSPA VIRI\n0.1990924\n0.0052905\n6\n\n\n2021\nSTTSTJ\nPTRFSHLW\n0\nSPA VIRI\n0.1228636\n0.0034143\n4\n\n\n2021\nSTTSTJ\nPVMTDEEP\n0\nSPA VIRI\n0.0182898\n0.0002980\n11\n\n\n2021\nSTTSTJ\nPVMTSHLW\n0\nSPA VIRI\n0.0862729\n0.0015941\n14\n\n\n2021\nSTTSTJ\nSCRDEEP\n0\nSPA VIRI\n0.0000000\n0.0000000\n6\n\n\n2021\nSTTSTJ\nSCRSHLW\n0\nSPA VIRI\n0.1717582\n0.0218786\n6\n\n\n2023\nSTTSTJ\nAGRFDEEP\n0\nSPA VIRI\n0.5465730\n0.0122763\n85\n\n\n2023\nSTTSTJ\nAGRFSHLW\n0\nSPA VIRI\n0.3500646\n0.0041405\n56\n\n\n2023\nSTTSTJ\nBDRKDEEP\n0\nSPA VIRI\n0.4761375\n0.0195610\n6\n\n\n2023\nSTTSTJ\nBDRKSHLW\n0\nSPA VIRI\n0.1744360\n0.0015690\n40\n\n\n2023\nSTTSTJ\nPTRFDEEP\n0\nSPA VIRI\n0.3231584\n0.0167691\n12\n\n\n2023\nSTTSTJ\nPTRFSHLW\n0\nSPA VIRI\n0.4153273\n0.0218894\n10\n\n\n2023\nSTTSTJ\nPVMTDEEP\n0\nSPA VIRI\n0.0812184\n0.0007335\n43\n\n\n2023\nSTTSTJ\nPVMTSHLW\n0\nSPA VIRI\n0.1380233\n0.0036472\n16\n\n\n2023\nSTTSTJ\nSCRDEEP\n0\nSPA VIRI\n0.0000000\n0.0000000\n12\n\n\n2023\nSTTSTJ\nSCRSHLW\n0\nSPA VIRI\n0.0807478\n0.0030752\n7"
   },
   {
     "objectID": "functions/estimate-biomass.html#function-getpsubiomass",
     "href": "functions/estimate-biomass.html#function-getpsubiomass",
     "title": "Biomass",
     "section": "Function: getPSUBiomass()",
-    "text": "Function: getPSUBiomass()\n\nPurpose\nCalculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the Primary Sample Unit (PSU) level.\n\n\nUsage\n\ngetPSUBiomass()\n\n\n\nOutput"
+    "text": "Function: getPSUBiomass()\n\nPurpose\nCalculates mean biomass kg/cylinder (or \\(kg/177m^2\\)) at the Primary Sample Unit (PSU) level.\n\n\nUsage\n\ngetPSUBiomass()\n\n\n\nOutput\n\ngetPSUBiomass(STTSTJ, \"spa viri\") %&gt;%\n  head() %&gt;% \n  kableExtra::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYEAR\nREGION\nSTRAT\nPROT\nPRIMARY_SAMPLE_UNIT\nSPECIES_CD\nm\nvar\nbiomass\n\n\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\n6018\nSPA VIRI\n1\nNA\n0.5073205\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\n6019\nSPA VIRI\n1\nNA\n0.3159863\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\n6020\nSPA VIRI\n1\nNA\n0.0000000\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\n6022\nSPA VIRI\n1\nNA\n0.0000000\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\n6023\nSPA VIRI\n1\nNA\n0.1099006\n\n\n2017\nSTTSTJ\nAGRFDEEP\n0\n6024\nSPA VIRI\n1\nNA\n0.4446755"
+  },
+  {
+    "objectID": "filters.html#optional-filters-and-parameters",
+    "href": "filters.html#optional-filters-and-parameters",
+    "title": "Filters",
+    "section": "Optional Filters and Parameters",
+    "text": "Optional Filters and Parameters\nAll functions have two (2) required parameters that must be passed arguments\n1) x: the object returned from getRVCData()\n2) species: species (code, common name or scientific name) or list of species"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "downloading.html",
@@ -84,8 +98,8 @@
     "text": "The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment\n\nFKEYS2024 &lt;- getRvcData(years = 2024, regions = \"FLA KEYS\")\n\nthe ‘regions’ parameter takes a specific formatted argument\n“FLA KEYS” : Florida Keys (Miami/Dade south to Key West)\n“DRY TORT” : Dry Tortugas\n“SEFCRI” : Southeast Florida (Miami/Dade north to Martin County)\n“FGBNMS” : Flower Garden Banks National Marine Sanctuary\n“PRICO” : Puerto Rico\n“STTSTJ” : St. Thomas and St. John\n“STX” : St. Croix\n\nYou can also download multiple years and/or regions into one object (see Section 3)\n\n# and range of years 1999:2024\nAll_Keys &lt;- getRvcData(years = 1999:2024, regions = \"FLA KEYS\") #All years in the Keys\n\n# or 2 specific years in 2 specific regions\nUSVI &lt;- getRvcData(years = c(2017, 2023), regions = c(\"STTSTJ\", \"STX\")) #Only 2017 and 2023 in U.S. Virgin Islands"
   },
   {
-    "objectID": "downloading.html#downloading-the-data",
-    "href": "downloading.html#downloading-the-data",
+    "objectID": "downloading.html#sec-GetRvcData",
+    "href": "downloading.html#sec-GetRvcData",
     "title": "NCRMP Fish R Package",
     "section": "",
     "text": "The following code will retrieve NCRMP fish survey data for the Florida Keys 2024 and save it as a named object in your R environment\n\nFKEYS2024 &lt;- getRvcData(years = 2024, regions = \"FLA KEYS\")\n\nthe ‘regions’ parameter takes a specific formatted argument\n“FLA KEYS” : Florida Keys (Miami/Dade south to Key West)\n“DRY TORT” : Dry Tortugas\n“SEFCRI” : Southeast Florida (Miami/Dade north to Martin County)\n“FGBNMS” : Flower Garden Banks National Marine Sanctuary\n“PRICO” : Puerto Rico\n“STTSTJ” : St. Thomas and St. John\n“STX” : St. Croix\n\nYou can also download multiple years and/or regions into one object (see Section 3)\n\n# and range of years 1999:2024\nAll_Keys &lt;- getRvcData(years = 1999:2024, regions = \"FLA KEYS\") #All years in the Keys\n\n# or 2 specific years in 2 specific regions\nUSVI &lt;- getRvcData(years = c(2017, 2023), regions = c(\"STTSTJ\", \"STX\")) #Only 2017 and 2023 in U.S. Virgin Islands"
@@ -105,39 +119,32 @@
     "text": "3 Available Data\nAs of Spring 2025\n\n\n\n\n\nYear\nDry Tortugas\nFlorida Keys\nS.E. Florida\nFlower Gardens\nPuerto Rico\nSt. Thomas/John\nSt. Croix\n\n\n\n\n1999\nx\nx\n\n\n\n\n\n\n\n2000\nx\nx\n\n\n\n\n\n\n\n2001\n\nx\n\n\n\n\n\n\n\n2002\n\nx\n\n\n\n\n\n\n\n2003\n\nx\n\n\n\n\n\n\n\n2004\nx\nx\n\n\n\n\n\n\n\n2005\n\nx\n\n\n\n\n\n\n\n2006\nx\nx\n\n\n\n\n\n\n\n2007\n\nx\n\n\n\n\n\n\n\n2008\nx\nx\n\n\n\n\n\n\n\n2009\n\nx\n\n\n\n\n\n\n\n2010\nx\nx\n\n\n\n\n\n\n\n2011\n\nx\n\n\n\n\n\n\n\n2012\nx\nx\n\n\n\n\n\n\n\n2013\n\n\nx\n\n\n\n\n\n\n2014\nx\nx\nx\n\n\n\n\n\n\n2015\n\n\nx\n\n\n\n\n\n\n2016\nx\nx\nx\n\nx\n\n\n\n\n2017\n\n\n\n\n\nx\nx\n\n\n2018\nx\nx\nx\nx\n\n\n\n\n\n2019\n\n\n\n\nx\nx\nx\n\n\n2020\n\n\n\n\n\n\n\n\n\n2021\nx\n\nx\n\nx\nx\nx\n\n\n2022\n\nx\nx\nx\n\n\n\n\n\n2023\nx\n\n\nx\nx\nx\nx\n\n\n2024\nx\nx\nx\nx"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "functions/estimate-abundance.html",
     "href": "functions/estimate-abundance.html",
     "title": "Abundance",
     "section": "",
-    "text": "Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.\n\n\n\n\ngetDomainAbundance()"
+    "text": "Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.\n\n\n\n\ngetDomainAbundance()\n\n\n\n\n\ngetDomainAbundance(FKEYS2024, \"ocy chry\") %&gt;% \n  select(YEAR:n) %&gt;% \n  kableExtra::kable()\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\nabundance\nvar\nn\n\n\n\n\n2024\nFLA KEYS\nOCY CHRY\n17580076\n2.952541e+12\n622"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getdomainabundance",
     "href": "functions/estimate-abundance.html#function-getdomainabundance",
     "title": "Abundance",
     "section": "",
-    "text": "Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.\n\n\n\n\ngetDomainAbundance()"
+    "text": "Calculates relative species abundance at the domain level. This relative estimate is scaled by the total number of PSUs in the Domain.\n\n\n\n\ngetDomainAbundance()\n\n\n\n\n\ngetDomainAbundance(FKEYS2024, \"ocy chry\") %&gt;% \n  select(YEAR:n) %&gt;% \n  kableExtra::kable()\n\n\n\n\nYEAR\nREGION\nSPECIES_CD\nabundance\nvar\nn\n\n\n\n\n2024\nFLA KEYS\nOCY CHRY\n17580076\n2.952541e+12\n622"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getstratumabundance",
     "href": "functions/estimate-abundance.html#function-getstratumabundance",
     "title": "Abundance",
     "section": "Function: getStratumAbundance()",
-    "text": "Function: getStratumAbundance()\n\nPurpose\nCalculates relative species abundance at the stratum level. This relative estimate is scaled by the number of PSUs in a given Stratum.\n\n\nUsage\n\ngetStratumAbundance()\n\n\n\nOutput"
+    "text": "Function: getStratumAbundance()\n\nPurpose\nCalculates relative species abundance at the stratum level. This relative estimate is scaled by the number of PSUs in a given Stratum.\n\n\nUsage\n\ngetStratumAbundance()\n\n\n\nOutput\n\ngetStratumAbundance(FKEYS2024, \"ocy chry\") %&gt;% \n  select(YEAR:n) %&gt;% \n  kableExtra::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYEAR\nREGION\nSTRAT\nPROT\nSPECIES_CD\nabundance\nvar\nn\n\n\n\n\n2024\nFLA KEYS\nFK01\n0\nOCY CHRY\n34563.877\n1.813044e+08\n17\n\n\n2024\nFLA KEYS\nFK01\n1\nOCY CHRY\n4110.442\n2.400015e+06\n10\n\n\n2024\nFLA KEYS\nFK02\n0\nOCY CHRY\n2061568.167\n6.273831e+10\n108\n\n\n2024\nFLA KEYS\nFK02\n1\nOCY CHRY\n40095.728\n6.883363e+07\n5\n\n\n2024\nFLA KEYS\nFK03\n0\nOCY CHRY\n1718815.884\n8.331036e+10\n31\n\n\n2024\nFLA KEYS\nFK03\n1\nOCY CHRY\n46996.686\n2.060856e+08\n13\n\n\n2024\nFLA KEYS\nFK04\n0\nOCY CHRY\n2816999.373\n3.612158e+11\n73\n\n\n2024\nFLA KEYS\nFK04\n1\nOCY CHRY\n236902.970\n1.810878e+09\n38\n\n\n2024\nFLA KEYS\nFK05\n0\nOCY CHRY\n1795488.939\n4.068037e+10\n67\n\n\n2024\nFLA KEYS\nFK05\n1\nOCY CHRY\n233279.390\n1.201280e+09\n93\n\n\n2024\nFLA KEYS\nFK06\n0\nOCY CHRY\n842236.956\n8.811911e+10\n18\n\n\n2024\nFLA KEYS\nFK06\n1\nOCY CHRY\n18207.325\n9.448928e+07\n3\n\n\n2024\nFLA KEYS\nFK07\n0\nOCY CHRY\n2376328.210\n2.203059e+11\n72\n\n\n2024\nFLA KEYS\nFK07\n1\nOCY CHRY\n138813.865\n7.959701e+08\n23\n\n\n2024\nFLA KEYS\nFK09\n0\nOCY CHRY\n5215668.512\n2.091810e+12\n51"
   },
   {
     "objectID": "functions/estimate-abundance.html#function-getpsuabundance",
     "href": "functions/estimate-abundance.html#function-getpsuabundance",
     "title": "Abundance",
     "section": "Function: getPSUAbundance()",
-    "text": "Function: getPSUAbundance()\n\nPurpose\nCalculates relative species abundance at the Primary Sample Unit (PSU) level. This relative estimate is scaled by the number of Secondary Sampling Units (SSU) available in PSU.\n\n\nUsage\n\ngetPSUAbundance()\n\n\n\nOutput"
+    "text": "Function: getPSUAbundance()\n\nPurpose\nCalculates relative species abundance at the Primary Sample Unit (PSU) level. This relative estimate is scaled by the number of Secondary Sampling Units (SSU) available in PSU.\n\n\nUsage\n\ngetPSUAbundance()\n\n\n\nOutput\n\ngetPSUAbundance(FKEYS2024, \"ocy chry\") %&gt;%\n  head() %&gt;% \n  kableExtra::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYEAR\nREGION\nSTRAT\nPROT\nPRIMARY_SAMPLE_UNIT\nSPECIES_CD\nm\nvar\nabundance\n\n\n\n\n2024\nFLA KEYS\nFK01\n0\n1000\nOCY CHRY\n1\nNA\n0.0\n\n\n2024\nFLA KEYS\nFK01\n0\n1001\nOCY CHRY\n1\nNA\n0.0\n\n\n2024\nFLA KEYS\nFK01\n0\n1002\nOCY CHRY\n1\nNA\n2.5\n\n\n2024\nFLA KEYS\nFK01\n0\n1005\nOCY CHRY\n1\nNA\n0.0\n\n\n2024\nFLA KEYS\nFK01\n0\n1006\nOCY CHRY\n1\nNA\n0.0\n\n\n2024\nFLA KEYS\nFK01\n0\n1007\nOCY CHRY\n1\nNA\n0.0"
   },
   {
     "objectID": "functions/estimate-density.html",

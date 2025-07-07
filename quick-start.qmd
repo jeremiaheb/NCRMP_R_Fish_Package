@@ -38,7 +38,7 @@ STTSTJ <- getRvcData(years = 2017:2023, regions = "STTSTJ")
 #| warning: false
 RH_density <- getDomainDensity(STTSTJ, "EPI GUTT")
 
-head(RH_density) %>% kable()
+head(RH_density) %>% select(YEAR:n) %>% kable()
 ```
 
 4) create additional column and plot via ggplot2
